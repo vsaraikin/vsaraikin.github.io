@@ -1,0 +1,34 @@
+name: Build and Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master  # Используйте вашу рабочую ветку
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: 'vsaraikin/vsaraikin.github.io' # Публичный репозиторий с сайтом, где и будет этот конфиг
+        ref: 'master'  # Обычно main или master
+
+    - name: Clone private repository
+      env:
+        PERSONAL_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      run: |
+        git clone https://$PERSONAL_TOKEN@github.com/vsaraikin/knowledge.git temp_dir
+
+    # Шаг для сборки сайта, используя данные из приватного репозитория
+    - name: Build the site
+      run: |
+        # Ваш скрипт сборки, который использует данные из temp_dir
+        
+    # Шаг для деплоя на GitHub Pages
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4.1.4
+      with:
+        branch: gh-pages  # Целевая ветка для GitHub Pages
+        folder: build  # Папка, в которой находятся собранные файлы для деплоя
+        token: ${{ secrets.GITHUB_TOKEN }}
