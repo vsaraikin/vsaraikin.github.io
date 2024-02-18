@@ -10,7 +10,7 @@ def generate_page(html_text, title, description):
 <meta name="description" content="{description}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style/github-markdown.css">
-<link rel="stylesheet" href="style/format.css">
+<link rel="stylesheet" href="../style/style.css">
 <article class="markdown-body">
 {html_text}
 </article>

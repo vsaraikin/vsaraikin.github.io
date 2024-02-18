@@ -1,0 +1,27 @@
+.markdown-body {
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 45px;
+}
+
+@media (max-width: 767px) {
+    .markdown-body {
+        padding: 15px;
+    }
+}
+
+body {
+    margin:50px auto;
+    max-width:650px;
+    line-height:1.7;
+    font-size: 18px;
+    color:rgb(65, 65, 65);
+    padding:0 10px;
+  }
+
+  footer {
+    padding: 10px 0; /* Padding for the top and bottom of the footer */
+    text-align: left; /* Center the text */
+}
