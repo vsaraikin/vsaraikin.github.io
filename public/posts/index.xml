@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Vladimir Saraikin&#39;s personal website</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Vladimir Saraikin&#39;s personal website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 Feb 2024 07:07:07 +0100</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    <item>
+      <title>My First Post</title>
+      <link>http://localhost:1313/posts/programming-languages/python-interview/</link>
+      <pubDate>Sat, 24 Feb 2024 07:07:07 +0100</pubDate>
+      
+      <guid>http://localhost:1313/posts/programming-languages/python-interview/</guid>
+      <description>&lt;h1 id=&#34;python-interview&#34;&gt;Python Interview&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#python-interview&#34;&gt;Python Interview&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#basic-python&#34;&gt;Basic Python&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#%D1%87%D1%82%D0%BE-%D0%B7%D0%B0-%D1%8F%D0%B7%D1%8B%D0%BA-python&#34;&gt;Что за язык Python?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%D0%BF%D0%BE%D1%87%D0%B5%D0%BC%D1%83-%D0%BE%D0%BD-%D0%BC%D0%B5%D0%B4%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9&#34;&gt;Почему он медленный?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#mutable--immutable-%D1%82%D0%B8%D0%BF%D1%8B-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85&#34;&gt;mutable / immutable типы данных&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#bounded-and-unbounded-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B&#34;&gt;Bounded and unbounded методы?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%D0%BF%D1%80%D0%B8-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8-%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-int-%D0%B1%D1%83%D0%B4%D0%B5%D1%82-%D0%BB%D0%B8-%D0%BC%D0%B5%D0%BD%D1%8F%D1%82%D1%8C%D1%81%D1%8F-id&#34;&gt;При измени значения int будет ли меняться id?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%D1%87%D1%82%D0%BE-%D0%BC%D0%BE%D0%B6%D0%B5%D1%82-%D0%B1%D1%8B%D1%82%D1%8C-%D0%B2-%D0%BA%D0%B0%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B5-%D0%BA%D0%BB%D1%8E%D1%87%D0%B0-%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8F&#34;&gt;Что может быть в качестве ключа словаря?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#args--kwargs&#34;&gt;args &amp;amp; kwargs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%D0%B7%D0%B0%D0%BC%D1%8B%D0%BA%D0%B0%D0%BD%D0%B8%D0%B5-closure&#34;&gt;Замыкание (closure)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80-%D1%81-%D0%BF%D1%80%D0%BE%D0%BA%D0%B8%D0%B4%D1%8B%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC-%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9&#34;&gt;Декоратор с прокидыванием переменной&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80-%D0%B8-%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80&#34;&gt;Итератор и генератор&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-coroutine&#34;&gt;Что такое coroutine?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-future&#34;&gt;Что такое future?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-%D0%B4%D0%B5%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D1%80%D1%8B&#34;&gt;Что такое дескрипторы?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#collections&#34;&gt;collections&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#pythopath&#34;&gt;PYTHOPATH&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%D0%BA%D0%B0%D0%BA-%D0%BF%D0%BE%D0%BD%D1%8F%D1%82%D1%8C-%D1%85%D0%B5%D1%88%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D1%8B%D0%B9-%D0%BB%D0%B8-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82&#34;&gt;Как понять хешируемый ли объект&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%D0%BA%D0%B0%D0%BA-%D0%BA%D0%BE%D0%B4%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D0%B8-%D0%B4%D0%B5%D0%BA%D0%BE%D0%B4%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B8&#34;&gt;Как кодировать и декодировать строки&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%D0%BA%D0%B0%D0%BA%D0%B8%D0%B5-%D0%B2%D0%B8%D0%B4%D1%8B-%D1%81%D1%82%D1%80%D0%BE%D0%BA-%D0%B1%D1%8B%D0%B2%D0%B0%D1%8E%D1%82-%D0%B2-%D0%BF%D0%B8%D1%82%D0%BE%D0%BD%D0%B5&#34;&gt;Какие виды строк бывают в питоне&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%D0%BA%D0%B0%D0%BA%D0%B8%D0%B5-%D0%BD%D1%8E%D0%B0%D0%BD%D1%81%D1%8B-%D0%B5%D1%81%D1%82%D1%8C-%D0%B2-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8-%D1%87%D0%B8%D1%81%D0%B5%D0%BB-%D0%BA%D0%B0%D0%BA-%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%B9&#34;&gt;Какие нюансы есть в использовании чисел как ключей&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#memory-management&#34;&gt;Memory Management&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#%D0%BA%D0%B0%D0%BA-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%B5%D1%82%D1%81%D1%8F-%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F&#34;&gt;Как создается переменная?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#memory-consumption&#34;&gt;Memory consumption&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#garbage-collector&#34;&gt;Garbage collector&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4-%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BB%D0%BB%D0%B8%D0%B7%D0%B8%D0%B8-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B5%D1%82%D1%81%D1%8F-%D0%B2-python&#34;&gt;Какой метод разрешения коллизии используется в Python?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#oop&#34;&gt;OOP&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#property&#34;&gt;Property&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#classmethod-vs-staticmethod&#34;&gt;Classmethod vs Staticmethod&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#dataclass&#34;&gt;Dataclass&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#mro&#34;&gt;MRO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#diamond-problem&#34;&gt;Diamond problem&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#mixin&#34;&gt;Mixin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#metaclasses&#34;&gt;Metaclasses&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%D0%B7%D0%B0%D1%87%D0%B5%D0%BC-%D0%BD%D1%83%D0%B6%D0%B5%D0%BD-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4-super&#34;&gt;Зачем нужен метод super?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-%D0%BC%D0%B0%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B-%D0%BA%D0%B0%D0%BA%D0%B8%D0%B5-%D0%BC%D0%B0%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B-%D0%B5%D1%81%D1%82%D1%8C-%D0%B8-%D0%B4%D0%BB%D1%8F-%D1%87%D0%B5%D0%B3%D0%BE-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%82%D1%81%D1%8F&#34;&gt;Что такое магические методы? Какие магические методы есть и для чего используются?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%D0%B7%D0%B0%D1%87%D0%B5%D0%BC-%D0%BD%D1%83%D0%B6%D0%B5%D0%BD-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4-super-1&#34;&gt;Зачем нужен метод super?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%D0%BC%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80%D1%8B-%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0-%D0%B2-python&#34;&gt;Модификаторы доступа в python&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#concurrency&#34;&gt;Concurrency&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#gil-%E2%80%93-%D0%B7%D0%B0%D1%87%D0%B5%D0%BC-%D0%BD%D1%83%D0%B6%D0%B5%D0%BD&#34;&gt;GIL – зачем нужен?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#thread&#34;&gt;Thread&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#mutex&#34;&gt;Mutex&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#semaphore&#34;&gt;Semaphore&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#race-condition&#34;&gt;Race condition&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#deadlock&#34;&gt;Deadlock&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%D1%81%D0%BB%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8C-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B9-%D0%B2-%D0%BA%D0%BE%D0%BB%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%D1%85&#34;&gt;Сложность операций в коллекциях&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;basic-python&#34;&gt;Basic Python&lt;/h2&gt;
+&lt;h3 id=&#34;что-за-язык-python&#34;&gt;Что за язык Python?&lt;/h3&gt;
+&lt;p&gt;Высокоуровневый с динамической строгой типизацией.&lt;/p&gt;
+&lt;p&gt;Python не разрешит сложить число &lt;code&gt;1&lt;/code&gt; и строку &lt;code&gt;&#39;7&#39;&lt;/code&gt; , потому ,что это значения разных типов. Нужно сначала либо сделать строку числом, либо число строкой.&lt;/p&gt;
+&lt;p&gt;Динамически типизированные языки не требуют указывать тип, но и не определяют его сами.&lt;/p&gt;
+&lt;h3 id=&#34;почему-он-медленный&#34;&gt;Почему он медленный?&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Интерпретируемость&lt;/li&gt;
+&lt;li&gt;Нету JIT-complier из коробки&lt;/li&gt;
+&lt;li&gt;GIL&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;mutable--immutable-типы-данных&#34;&gt;mutable / immutable типы данных&lt;/h3&gt;
+&lt;p&gt;bool, int, float, tuple, str, frozenset, nonetype - &lt;strong&gt;immutable&lt;/strong&gt;
+list, set, dict - &lt;strong&gt;mutable&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Нужны оба типа для того, чтобы было меньше памяти использовано или же для дизайна.&lt;/p&gt;
+&lt;h3 id=&#34;bounded-and-unbounded-методы&#34;&gt;Bounded and unbounded методы?&lt;/h3&gt;
+&lt;p&gt;bounded — это тот метод, где нужно вызывать через объект класса и в методе есть self
+unbounded — это тот метод, которые не закреплены перед объектом и могут свободно вызываться без него (по факту staticmethod)&lt;/p&gt;
+&lt;h3 id=&#34;при-измени-значения-int-будет-ли-меняться-id&#34;&gt;При измени значения int будет ли меняться id?&lt;/h3&gt;
+&lt;p&gt;Да будет, потому что int — это неизменяемый тип данных&lt;/p&gt;
+&lt;h3 id=&#34;что-может-быть-в-качестве-ключа-словаря&#34;&gt;Что может быть в качестве ключа словаря?&lt;/h3&gt;
+&lt;p&gt;Могут быть: целые и действительные числа, строки, кортежи. Не может быть set, list, но может быть frozenset.&lt;/p&gt;
+&lt;h3 id=&#34;args--kwargs&#34;&gt;args &amp;amp; kwargs&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;*args&lt;/code&gt; (неограниченное количество позиционных) - e.g. tuple, &lt;code&gt;**kwargs&lt;/code&gt; (неограниченное количество именованных) - e.g. dict&lt;/p&gt;
+&lt;p&gt;Грубо говоря, &lt;code&gt;*args&lt;/code&gt; складывает все аргументы (которые даже не имеют названий переменных, а только значения) в tuple, а &lt;code&gt;**kwargs&lt;/code&gt; требует, чтобы мы передавали название переменной в которую хотим сложить словарь&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;**kwargs&lt;/code&gt; — это аргументы, передаваемые в вызов при помощи имени (идентификатора), либо словаря с его распаковкой при помощи &lt;code&gt;**&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;*args&lt;/code&gt; — это аргументы, передаваемые в вызов в определённой последовательности (на определённых позициях), без указания их имён.&lt;/p&gt;
+&lt;h3 id=&#34;замыкание-closure&#34;&gt;Замыкание (closure)&lt;/h3&gt;
+&lt;p&gt;Замыкание (closure) — функция, которая находится внутри другой функции и ссылается на переменные объявленные в теле внешней функции (свободные переменные).&lt;/p&gt;
+&lt;p&gt;Можем использовать:
+а) когда мы должны спрятать данные и не использовать глобальную переменную
+б) иногда использует место класса&lt;/p&gt;
+&lt;p&gt;У всех объектов будет приватный атрибут &lt;code&gt;closure&lt;/code&gt;, которые возвращает кортеж из cell objects, если это функция замыкания.&lt;/p&gt;
+&lt;p&gt;Даже, если мы удалим внешнюю функцию, то вызывая объект функции все будет работать, несмотря на то, что конструкция стерта.&lt;/p&gt;
+&lt;h3 id=&#34;декоратор-с-прокидыванием-переменной&#34;&gt;Декоратор с прокидыванием переменной&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;my_decorator&lt;/span&gt;(input_arg):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;the_real_decorator&lt;/span&gt;(function):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;wrapper&lt;/span&gt;(&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;args, &lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;kwargs):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            result &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; function(&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;args, &lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;kwargs)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; result
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; wrapper
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; the_real_decorator
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;functools.wraps() — функцию, которая помогает сделать декорируемую функцию похожей на исходную, делая такие вещи, как сохранение doctstring исходной функции.&lt;/p&gt;
+&lt;p&gt;Часто используется при создании декоратора.&lt;/p&gt;
+&lt;h3 id=&#34;итератор-и-генератор&#34;&gt;Итератор и генератор&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Итератор&lt;/strong&gt; — это объект, который возвращает свои элементы по одному за раз или же это итер. объект который содержит исчисляемое число значений, по которому можно итерироваться.&lt;/p&gt;
+&lt;p&gt;В python это реализовано через методы iter и next&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;iter&lt;/code&gt; возвращает ссылку на итератор&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;next&lt;/code&gt; возвращает следующий элемент&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Генератор&lt;/strong&gt; — это объект, который сразу при создании не вычисляет значения всех своих элементов. ДЕРЖИТ ОДИН. Или другими словами, &lt;strong&gt;это итератор элементы которого можно итерировать только один раз.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Преимущества yield:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;• экономия памяти
+• не останавливается, а возобновляет работу&lt;/p&gt;
+&lt;p&gt;Как создать:&lt;/p&gt;
+&lt;p&gt;• Выражение-генератор можно вызывать через &lt;code&gt;(i for …)&lt;/code&gt;
+• В функции вместо &lt;code&gt;return&lt;/code&gt; использовать &lt;code&gt;yield&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Итератор не является генератором! Но любой генератор является итератором.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;range&lt;/code&gt; не является генератором и там есть оператор &lt;code&gt;in&lt;/code&gt; и там есть спец магические методы&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;что-такое-coroutine&#34;&gt;Что такое coroutine?&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Корутина&lt;/strong&gt; — это генератор, к которому добавлена возможность послать данные через метод &lt;code&gt;send&lt;/code&gt;. То есть их можно запустить, остановить и перезапустить.&lt;/p&gt;
+&lt;h3 id=&#34;что-такое-future&#34;&gt;Что такое future?&lt;/h3&gt;
+&lt;h3 id=&#34;что-такое-дескрипторы&#34;&gt;Что такое дескрипторы?&lt;/h3&gt;
+&lt;p&gt;Дескриптор – это механизм, где &lt;code&gt;__get__()&lt;/code&gt;, &lt;code&gt;__set__()&lt;/code&gt; и &lt;code&gt;__delete__()&lt;/code&gt; перегружены, то есть смена поведения обновления, получения и удаления атрибута класса.&lt;/p&gt;
+&lt;h3 id=&#34;collections&#34;&gt;collections&lt;/h3&gt;
+&lt;p&gt;Модуль, в котором содержутся: &lt;code&gt;namedtuple, Counter, defaultdict, OrderedDict&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;pythopath&#34;&gt;PYTHOPATH&lt;/h3&gt;
+&lt;p&gt;Переменная среды PYTHONPATH используется в Python для указания списка каталогов, из которых можно импортировать модули. При запуске можно проверить переменную &lt;code&gt;sys.path&lt;/code&gt;, чтобы узнать, по каким каталогам будет выполняться поиск при импорте чего-либо.&lt;/p&gt;
+&lt;p&gt;Чтобы задать эту переменную из командной строки, используйте: &lt;code&gt;set PYTHONPATH=list;of;paths&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;как-понять-хешируемый-ли-объект&#34;&gt;Как понять хешируемый ли объект&lt;/h3&gt;
+&lt;p&gt;Объект называется хешируемым, если он имеет хеш-значение (целое число), которое никогда не изменяется на протяжении его жизненного цикла и возвращается методом &lt;code&gt;__hash__()&lt;/code&gt;, и может сравниваться с другими объектами (реализует метод &lt;code&gt;__eq__()&lt;/code&gt;). Равные хешируемые объекты должны иметь равные хеш-значения. Все стандартные неизменяемые объекты хешируемые. Все стандартные изменяемые объекты не хешируемые.&lt;/p&gt;
+&lt;h3 id=&#34;как-кодировать-и-декодировать-строки&#34;&gt;Как кодировать и декодировать строки&lt;/h3&gt;
+&lt;p&gt;Кодировать – перевести Юникод в байтовую строку. Вызвать метод &lt;code&gt;.encode()&lt;/code&gt; у строки.&lt;/p&gt;
+&lt;p&gt;Декодировать – восстановить строку из цепочки байт. Вызвать метод &lt;code&gt;.decode()&lt;/code&gt; у объекта &lt;code&gt;str&lt;/code&gt; или &lt;code&gt;bytes&lt;/code&gt; (версии Питона 2 и 3 соответственно).&lt;/p&gt;
+&lt;p&gt;В обоих случаях явно передавать кодировку, иначе будет использована та, что определена в системе по умолчанию. Быть готовым поймать исключения &lt;code&gt;UnicodeEncodeError&lt;/code&gt;, &lt;code&gt;UnicodeDecodeError&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;какие-виды-строк-бывают-в-питоне&#34;&gt;Какие виды строк бывают в питоне&lt;/h3&gt;
+&lt;p&gt;Зависит от версии Питона. Во второй ветке два типа: однобайтные строки и Юникод представлены классами str и unicode соответственно. В третьем Питоне есть один вид строк str, который представляет собой Юникод. Однобайтных строк нет, вместо них есть тип bytes, то есть цепочка байт.&lt;/p&gt;
+&lt;h3 id=&#34;какие-нюансы-есть-в-использовании-чисел-как-ключей&#34;&gt;Какие нюансы есть в использовании чисел как ключей&lt;/h3&gt;
+&lt;p&gt;Числовые ключи в словарях подчиняются правилам сравнения чисел. Таким образом, &lt;code&gt;int(1)&lt;/code&gt; и &lt;code&gt;float(1.0)&lt;/code&gt; считаются одинаковым ключом. Однако из-за того, что значения типа float сохраняются приближенно, не рекомендуется использовать их в качестве ключей.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; {&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;yes&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;no&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1.0&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;maybe&amp;#39;&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;maybe&amp;#39;&lt;/span&gt;} 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;memory-management&#34;&gt;Memory Management&lt;/h2&gt;
+&lt;h3 id=&#34;как-создается-переменная&#34;&gt;Как создается переменная?&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Сначала создается объект со значением переменной&lt;/li&gt;
+&lt;li&gt;Переменная начинает ссылаться на него&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;memory-consumption&#34;&gt;Memory consumption&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|    | Type                      | Value        |   Consumption |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|---:|:--------------------------|:-------------|--------------:|
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|  0 | &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&amp;gt;             | 1            |            28 |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|  1 | &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;float&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&amp;gt;           | 1.12         |            24 |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|  2 | &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;decimal&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Decimal&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&amp;gt; | 1.1200000000 |           104 |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|  3 | &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;str&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&amp;gt;             |              |            49 |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|  4 | &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;str&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&amp;gt;             | 1            |            50 |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|  5 | &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;dict&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&amp;gt;            | {}           |            64 |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|  6 | &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;set&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&amp;gt;             | {1}          |           216 |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|  7 | &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;dict&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&amp;gt;            | {1: None}    |           232 |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|  8 | &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;list&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&amp;gt;            | []           |            56 |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|  9 | &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;tuple&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&amp;gt;           | ()           |            40 |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| 10 | &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;list&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&amp;gt;            | [1]          |            64 |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| 11 | &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&amp;gt;             | 1            |            28 |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| 12 | &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;NoneType&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;&amp;gt;        |              |            16 |
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Python не освобождает всю память обратно операционной системе как только он удаляет какой либо объект. Вместо этого, он использует дополнительный менеджер памяти, предназначенный для маленьких объектов (размер которых меньше чем 512 байт). Для работы с такими объектами он выделяет большие блоки памяти, в которых в дальнейшем будет хранится множество маленьких объектов.&lt;/p&gt;
+&lt;p&gt;Как только один из маленьких объект удаляется — память из под него не переходит операционной системе, Python оставляет её для новых объектов с таким же размером. Если в одном из выделенных блоков памяти не осталось объектов, то Python может высвободить его операционной системе.&lt;/p&gt;
+&lt;h3 id=&#34;garbage-collector&#34;&gt;Garbage collector&lt;/h3&gt;
+&lt;p&gt;Стандартный интерпретатор питона (CPython) использует сразу два алгоритма:&lt;/p&gt;
+&lt;p&gt;– подсчет ссылок
+– generational garbage collector (далее GC)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. Алгоритм подсчета ссылок&lt;/strong&gt;. Объекты удаляются как только на них больше нет ссылок. Он постоянно работает в режиме реального времени. Не нужен объект – убрали.&lt;/p&gt;
+&lt;p&gt;Алгоритм очень простой и эффективный, но у него есть один большой недостаток. Он не умеет определять циклические ссылки. Именно из-за этого, в питоне существует дополнительный сборщик, именуемый GC, который следит за объектами с потенциальными циклическими ссылками.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Минусы&lt;/th&gt;
+&lt;th&gt;Плюсы&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;циклические ссылки&lt;/td&gt;
+&lt;td&gt;объекты удаляются сразу как только они не нужны&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;блокирование потоков&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;дополнительные накладные расходы на память и cpu&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Проверить текущее кол-во ссылок можно через &lt;code&gt;sys.getrefcount(foo))&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. GC&lt;/strong&gt; не работает в режиме реального времени и запускается периодически. Сборщик мусора разделяет все объекты на 3 поколения (генерации). Новые объекты попадают в первое поколение. Если новый объект выживает процесс сборки мусора, то он перемещается в следующее поколение. Чем выше поколение, тем реже оно сканируется на мусор.&lt;/p&gt;
+&lt;p&gt;Чтобы узнать порог отсеивания: &lt;code&gt;gc.get_threshold()&lt;/code&gt; → &lt;strong&gt;(700, 10, 10).&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Useful libs:&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://pypi.org/project/memory-profiler/&#34;&gt;Memory profiler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mg.pov.lt/objgraph/&#34;&gt;Object graph&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;какой-метод-разрешения-коллизии-используется-в-python&#34;&gt;Какой метод разрешения коллизии используется в Python?&lt;/h3&gt;
+&lt;p&gt;В Python используется метод открытой адресации.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;More about collisions →&lt;/em&gt; &lt;a href=&#34;Computer%20Science.md#%D0%9F%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F&#34;&gt;Computer Science&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;oop&#34;&gt;OOP&lt;/h2&gt;
+&lt;h3 id=&#34;property&#34;&gt;Property&lt;/h3&gt;
+&lt;p&gt;Обеспечивает интерфейс для атрибутов экземпляра класса. Он инкапсулирует атрибуты экземпляров и позволяет устанавливать setter, getter, deleter.&lt;/p&gt;
+&lt;h3 id=&#34;classmethod-vs-staticmethod&#34;&gt;Classmethod vs Staticmethod&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;classmethod&lt;/th&gt;
+&lt;th&gt;staticmethod&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Принимает cls как первый аргумент.&lt;/td&gt;
+&lt;td&gt;Не принимает дополнительных параметров.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;можно обращаться только к атрибутам класса, но не объекта.&lt;/td&gt;
+&lt;td&gt;Через этот метод нельзя обратиться ни к объектам, ни к методам класса.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Используем тогда, когда нужен доступ только к методам класса. Может быть использован как фабрика-метод, который будет возвращать объект класса.&lt;/td&gt;
+&lt;td&gt;Используем тогда, когда ни используется объект класса, ни атрибуты класса. Utility-type методы, которые ничего не знают о классе.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;dataclass&#34;&gt;Dataclass&lt;/h3&gt;
+&lt;p&gt;Используем, когда хотим хранить какие-то данные внутри класса.
+Следующие методы будут автоматически сгенерированы и код будет короче:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;init&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;repr&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;eq&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;mro&#34;&gt;MRO&lt;/h3&gt;
+&lt;p&gt;Это набор правил, по которому формируется схема наследования.&lt;/p&gt;
+&lt;p&gt;В python 2 алгоритм поиска в глубину: от текущего класса к родительскому и выше
+В python 3 алгоритм поиска в ширину: текущий класс и по всем его родителям&lt;/p&gt;
+&lt;p&gt;Можно вызвать через &lt;code&gt;Class.mro()&lt;/code&gt;, чтобы увидеть схему наследования.&lt;/p&gt;
+&lt;h3 id=&#34;diamond-problem&#34;&gt;Diamond problem&lt;/h3&gt;
+&lt;p&gt;Коренной класс &lt;code&gt;А&lt;/code&gt; имеет детей &lt;code&gt;B&lt;/code&gt; &amp;amp; &lt;code&gt;C&lt;/code&gt;, а &lt;code&gt;D&lt;/code&gt; наследуется от &lt;code&gt;B&lt;/code&gt; &amp;amp; &lt;code&gt;C&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/mro.png&#34; alt=&#34;mro&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;mixin&#34;&gt;Mixin&lt;/h3&gt;
+&lt;p&gt;Это небольшие классы, которые используются для того, чтобы дать дополнительный функционал другому классу. Например, полезно, когда:**&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;хотим добавить множество функций для класса&lt;/li&gt;
+&lt;li&gt;хотим использовать конкретную функцию во множестве разных классов&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;При создании класса в компании дописываем Mixin.&lt;/p&gt;
+&lt;h3 id=&#34;metaclasses&#34;&gt;Metaclasses&lt;/h3&gt;
+&lt;p&gt;Метаклассы — шаблоны для создания классов. Объекты создаются классом, а классы создаются метаклассом. Методы: &lt;code&gt;prepare&lt;/code&gt; (подготавливает данные), &lt;code&gt;new&lt;/code&gt;(создает класс), &lt;code&gt;init&lt;/code&gt;(инициализацию), &lt;code&gt;call&lt;/code&gt; (создание класса)&lt;/p&gt;
+&lt;p&gt;Например, &lt;code&gt;type&lt;/code&gt; — это метакласс.&lt;/p&gt;
+&lt;h3 id=&#34;зачем-нужен-метод-super&#34;&gt;Зачем нужен метод super?&lt;/h3&gt;
+&lt;p&gt;Позволяет обращаться к классу-родителю. Основное ее применение и польза – получения доступа из класса наследника к методам класса-родителя в том случае, если наследник переопределил эти методы.&lt;/p&gt;
+&lt;p&gt;Например, мы хотим внести какие-то изменения в дочернем классе не вызывая материнский объект. Вместо этого мы пишем &lt;code&gt;super.our_method()&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Чаще всего в &lt;code&gt;init&lt;/code&gt; используется.&lt;/p&gt;
+&lt;h3 id=&#34;что-такое-магические-методы-какие-магические-методы-есть-и-для-чего-используются&#34;&gt;Что такое магические методы? Какие магические методы есть и для чего используются?&lt;/h3&gt;
+&lt;p&gt;Это специальные методы, с помощью которых вы можете добавить в ваши классы «магию». Они всегда обрамлены двумя нижними подчеркиваниями.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Конструирование и инициализация&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;__new__(cls, [...)&lt;/code&gt; — это первый метод, который будет вызван при инициализации объекта. Он принимает в качестве параметров класс и потом любые другие аргументы, которые будут переданы в &lt;code&gt;__init__&lt;/code&gt;; переписывается для кастомизации создании класса и возвращает инстанс класса&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;__init__(self, [...)&lt;/code&gt; — инициализатор класса.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;__del__&lt;/code&gt; — это его деструктор&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Магические методы сравнения&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;• &lt;code&gt;__eq__(self, other)&lt;/code&gt;Определяет поведение оператора равенства, &lt;code&gt;==&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Числовые магические методы&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;• &lt;code&gt;__abs__(self)&lt;/code&gt;Определяет поведение для встроенной функции &lt;code&gt;abs()&lt;/code&gt;.
+• &lt;code&gt;__round__(self, n)&lt;/code&gt;Определяет поведение для встроенной функции &lt;code&gt;round()&lt;/code&gt;. &lt;code&gt;n&lt;/code&gt; это число знаков после запятой, до которого округлить.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Представление своих классов&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;• &lt;code&gt;__str__(self)&lt;/code&gt;Определяет поведение функции &lt;code&gt;str()&lt;/code&gt;, вызванной для экземпляра вашего класса.
+• &lt;code&gt;__repr__(self)&lt;/code&gt; делает то же самое, что и &lt;code&gt;__str__(self)&lt;/code&gt;, но главное отличие от &lt;code&gt;str()&lt;/code&gt; в целевой аудитории. &lt;code&gt;repr()&lt;/code&gt; больше предназначен для машинно-ориентированного вывода (более того, это часто должен быть валидный код на Питоне), а &lt;code&gt;str()&lt;/code&gt; предназначен для чтения людьми.
+• &lt;code&gt;__dir__(self)&lt;/code&gt;Определяет поведение функции &lt;code&gt;dir()&lt;/code&gt;, вызванной на экземпляре вашего класса. Этот метод должен возвращать пользователю список атрибутов.&lt;/p&gt;
+&lt;h3 id=&#34;зачем-нужен-метод-super-1&#34;&gt;Зачем нужен метод super?&lt;/h3&gt;
+&lt;p&gt;Позволяет обращаться к классу-родителю. Основное ее применение и польза – получения доступа из класса наследника к методам класса-родителя в том случае, если наследник переопределил эти методы.&lt;/p&gt;
+&lt;p&gt;Например, мы хотим внести какие-то изменения в дочернем классе не вызывая материнский объект. Вместо этого мы пишем &lt;code&gt;super.our_method()&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Чаще всего в &lt;code&gt;init&lt;/code&gt; используется.&lt;/p&gt;
+&lt;h3 id=&#34;модификаторы-доступа-в-python&#34;&gt;Модификаторы доступа в python&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;__private&lt;/code&gt; существует только внутри класса, даже с наследованием невозможно получить
+&lt;code&gt;_protected&lt;/code&gt; можно пронаследовать&lt;/p&gt;
+&lt;p&gt;Через protected доступ будет в текущем классе и в дочерних классах, но снаружи вызвать его будет нельзя. Отличие в том, что через private доступа не будет и будет кидать &lt;code&gt;AttributeError&lt;/code&gt;, а в protected доступ все еще будет.&lt;/p&gt;
+&lt;p&gt;По факту вызвать все равно можно даже private через objectclass._Class__privateatr&lt;/p&gt;
+&lt;h2 id=&#34;concurrency&#34;&gt;Concurrency&lt;/h2&gt;
+&lt;h3 id=&#34;gil--зачем-нужен&#34;&gt;GIL – зачем нужен?&lt;/h3&gt;
+&lt;p&gt;GIL является самым простым способом избежать конфликтов при одновременном обращении разных потоков к одним и тем же участкам памяти. Когда один поток захватывает его, GIL, работая по принципу мьютекса, блокирует остальные. Нет параллельных потоков — нет конфликтов при обращении к разделяемым объектам.&lt;/p&gt;
+&lt;h3 id=&#34;thread&#34;&gt;Thread&lt;/h3&gt;
+&lt;p&gt;Пото́к — наименьшая единица обработки, исполнение которой может быть назначено ядром операционной системы. Поток выполнения находится внутри процесса.&lt;/p&gt;
+&lt;h3 id=&#34;mutex&#34;&gt;Mutex&lt;/h3&gt;
+&lt;p&gt;A mutual exclusion lock or mutex lock is a synchronization primitive intended to prevent a race condition. Mutex следит за тем, чтобы выполнялся только один тред.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;threading.Lock()&lt;/code&gt; - mutex in Python&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# create a lock&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lock &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Lock()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# acquire the lock&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lock&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;acquire()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# release the lock&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lock&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;release()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;semaphore&#34;&gt;Semaphore&lt;/h3&gt;
+&lt;p&gt;Инструмент, который ограничивает количество потоков, которое может быть использовано Lock() объектом. По факту это расширение мьютекса.&lt;/p&gt;
+&lt;p&gt;То есть, если в семафоре стоит &lt;code&gt;“1”&lt;/code&gt;, то он работает также как и мьютекс.&lt;/p&gt;
+&lt;p&gt;Можно также использовать семафору для того, чтобы ограничить:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;кол-во калькуляций&lt;/li&gt;
+&lt;li&gt;кол-во открытых сокетов&lt;/li&gt;
+&lt;li&gt;кол-во операций I/O&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;race-condition&#34;&gt;Race condition&lt;/h3&gt;
+&lt;p&gt;Два треда запускают один и тот же код и могут получить доступ, либо изменять один и тот же ресурс, оставляя ресурс в непонятном виде.&lt;/p&gt;
+&lt;h3 id=&#34;deadlock&#34;&gt;Deadlock&lt;/h3&gt;
+&lt;p&gt;A deadlock is a concurrency failure mode where a thread or threads wait for a condition that never occurs.&lt;/p&gt;
+&lt;p&gt;Например:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;поток A waits for B and B waits for A&lt;/li&gt;
+&lt;li&gt;поток ждет сам себя&lt;/li&gt;
+&lt;li&gt;неправильное расположение &lt;code&gt;acquire&lt;/code&gt; среди потоков&lt;/li&gt;
+&lt;li&gt;после &lt;code&gt;acquire&lt;/code&gt; потока-1 происходит exception и до &lt;code&gt;release&lt;/code&gt; не доходит&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Чтобы избежать блокировок:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Использовать контексные менеджеры&lt;/li&gt;
+&lt;li&gt;Использовать timeout&lt;/li&gt;
+&lt;li&gt;Всегда acquire locks в верном порядке&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Reference:&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://superfastpython.com/thread-deadlock-in-python/&#34;&gt;How to Identify a Deadlock in Python&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;сложность-операций-в-коллекциях&#34;&gt;Сложность операций в коллекциях&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;list&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Operation&lt;/th&gt;
+&lt;th&gt;Average Case&lt;/th&gt;
+&lt;th&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Amortized_analysis&#34;&gt;http://en.wikipedia.org/wiki/Amortized_analysis&lt;/a&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Copy&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Append[1]&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Pop last&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Pop intermediate[2]&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Insert&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Get Item&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Set Item&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Delete Item&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Iteration&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Get Slice&lt;/td&gt;
+&lt;td&gt;O(k)&lt;/td&gt;
+&lt;td&gt;O(k)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Del Slice&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Set Slice&lt;/td&gt;
+&lt;td&gt;O(k+n)&lt;/td&gt;
+&lt;td&gt;O(k+n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Extend[1]&lt;/td&gt;
+&lt;td&gt;O(k)&lt;/td&gt;
+&lt;td&gt;O(k)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;http://svn.python.org/projects/python/trunk/Objects/listsort.txt&#34;&gt;http://svn.python.org/projects/python/trunk/Objects/listsort.txt&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;O(n log n)&lt;/td&gt;
+&lt;td&gt;O(n log n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Multiply&lt;/td&gt;
+&lt;td&gt;O(nk)&lt;/td&gt;
+&lt;td&gt;O(nk)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;x in s&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;min(s), max(s)&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Get Length&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;collections.deque&lt;/code&gt;&lt;/strong&gt; represented internally as a doubly linked list.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Operation&lt;/th&gt;
+&lt;th&gt;Average Case&lt;/th&gt;
+&lt;th&gt;Am. Worst Case&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Copy&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;append&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;appendleft&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pop&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;popleft&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;extend&lt;/td&gt;
+&lt;td&gt;O(k)&lt;/td&gt;
+&lt;td&gt;O(k)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;extendleft&lt;/td&gt;
+&lt;td&gt;O(k)&lt;/td&gt;
+&lt;td&gt;O(k)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;rotate&lt;/td&gt;
+&lt;td&gt;O(k)&lt;/td&gt;
+&lt;td&gt;O(k)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;remove&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Get Length&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;set&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Operation&lt;/th&gt;
+&lt;th&gt;Average case&lt;/th&gt;
+&lt;th&gt;Worst Case&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;x in s&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Union s&lt;/td&gt;
+&lt;td&gt;t&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://wiki.python.org/moin/TimeComplexity_%28SetCode%29&#34;&gt;https://wiki.python.org/moin/TimeComplexity_%28SetCode%29&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Intersection s&amp;amp;t&lt;/td&gt;
+&lt;td&gt;O(min(len(s), len(t)))&lt;/td&gt;
+&lt;td&gt;O(len(s) * len(t))&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Multiple intersection s1&amp;amp;s2&amp;amp;..&amp;amp;sn&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;(n-1)*O(l) where l is max(len(s1),..,len(sn))&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Difference s-t&lt;/td&gt;
+&lt;td&gt;O(len(s))&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;s.difference_update(t)&lt;/td&gt;
+&lt;td&gt;O(len(t))&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Symmetric Difference s^t&lt;/td&gt;
+&lt;td&gt;O(len(s))&lt;/td&gt;
+&lt;td&gt;O(len(s) * len(t))&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;s.symmetric_difference_update(t)&lt;/td&gt;
+&lt;td&gt;O(len(t))&lt;/td&gt;
+&lt;td&gt;O(len(t) * len(s))&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;dict&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Operation&lt;/th&gt;
+&lt;th&gt;Average Case&lt;/th&gt;
+&lt;th&gt;Amortized Worst Case&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;k in d&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Copy[3]&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Get Item&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Set Item[1]&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Delete Item&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Iteration[3]&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;em&gt;Reference&lt;/em&gt;: &lt;a href=&#34;https://wiki.python.org/moin/TimeComplexity&#34;&gt;TimeComplexity - Python Wiki&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    
+  </channel>
+</rss>

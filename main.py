@@ -1,48 +1,29 @@
 import os
+import re
 
-from markdown_it import MarkdownIt
-from mdformat.renderer import MDRenderer
-from mdit_py_plugins.front_matter import front_matter_plugin
-from mdit_py_plugins.footnote import footnote_plugin
-
-def generate_page(html_text, title, description):
-    return f"""<title>{title}</title>
-<meta name="description" content="{description}">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style/github-markdown.css">
-<link rel="stylesheet" href="../style/style.css">
-<article class="markdown-body">
-{html_text}
-</article>
-"""
-
-input_folder = './knowledge'
-output_folder = './notes'
-
-def md_to_html(page_params: dict[str]):
-    file = page_params['file']
+def replace_image_path(root_dir):
+    """
+    Recursively search for .md files in root_dir and subfolders,
+    remove the 'static/' part from the image paths, and write the changes back.
     
-    with open(f'{input_folder}/{file}', 'r') as f:
-        text = f.read()
-        
-    md = (
-        MarkdownIt('commonmark' ,{'breaks':True,'html':True})
-        .use(front_matter_plugin)
-        .use(footnote_plugin)
-        .enable('table')
-    )
+    :param root_dir: The root directory to search for .md files.
+    """
+    img_path_regex = re.compile(r'!\[(.*?)\]\((static/)(.*?)\)')
 
-    html_text = md.render(text)
-    output = generate_page(html_text, page_params['title'], page_params['description'])
+    for dirpath, _, filenames in os.walk(root_dir):
+        for filename in filenames:
+            if filename.endswith('.md'):
+                file_path = os.path.join(dirpath, filename)
+                with open(file_path, 'r', encoding='utf-8') as file:
+                    content = file.read()
+                
+                # Replace the old path with the new path
+                new_content, n = img_path_regex.subn(r'![\1](/\3)', content)
+                
+                if n > 0: # If there were replacements
+                    with open(file_path, 'w', encoding='utf-8') as file:
+                        file.write(new_content)
+                    print(f"Updated image paths in {file_path}")
 
-    if not os.path.exists(output_folder):
-        raise ValueError(f"path does not exist! {output_folder}")
-
-
-    with open(f'{output_folder}/{file[:-3]}.html', 'w') as f:
-        f.write(output)
-
-files = [{'file': f'brokers.md', 'title': 'Message Queue', 'description': 'message queues'}]
-
-for file in files:
-    md_to_html(file)
+root_directory = "./content/posts/Programming Languages"
+replace_image_path(root_directory)

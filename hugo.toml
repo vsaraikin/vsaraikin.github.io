@@ -1,0 +1,4 @@
+baseURL = 'https://saraikin.com/'
+languageCode = 'en-us'
+title = "Vladimir Saraikin's personal website"
+theme = 'etch'

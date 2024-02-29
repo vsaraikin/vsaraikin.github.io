@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" href="http://localhost:1313/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    <link rel="canonical" href="http://localhost:1313/posts/programming-languages/python-interview/" />
+    <title>My First Post</title>
+</head>
+<body><header id="banner">
+    <h2><a href="http://localhost:1313/">Vladimir Saraikin&#39;s personal website</a></h2>
+    <nav>
+        <ul>
+            
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>My First Post</h1>
+        <div>
+                <time>February 24, 2024</time>
+            </div>
+    </header><h1 id="python-interview">Python Interview</h1>
+<ul>
+<li><a href="#python-interview">Python Interview</a>
+<ul>
+<li><a href="#basic-python">Basic Python</a>
+<ul>
+<li><a href="#%D1%87%D1%82%D0%BE-%D0%B7%D0%B0-%D1%8F%D0%B7%D1%8B%D0%BA-python">Что за язык Python?</a></li>
+<li><a href="#%D0%BF%D0%BE%D1%87%D0%B5%D0%BC%D1%83-%D0%BE%D0%BD-%D0%BC%D0%B5%D0%B4%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9">Почему он медленный?</a></li>
+<li><a href="#mutable--immutable-%D1%82%D0%B8%D0%BF%D1%8B-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85">mutable / immutable типы данных</a></li>
+<li><a href="#bounded-and-unbounded-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B">Bounded and unbounded методы?</a></li>
+<li><a href="#%D0%BF%D1%80%D0%B8-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8-%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-int-%D0%B1%D1%83%D0%B4%D0%B5%D1%82-%D0%BB%D0%B8-%D0%BC%D0%B5%D0%BD%D1%8F%D1%82%D1%8C%D1%81%D1%8F-id">При измени значения int будет ли меняться id?</a></li>
+<li><a href="#%D1%87%D1%82%D0%BE-%D0%BC%D0%BE%D0%B6%D0%B5%D1%82-%D0%B1%D1%8B%D1%82%D1%8C-%D0%B2-%D0%BA%D0%B0%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B5-%D0%BA%D0%BB%D1%8E%D1%87%D0%B0-%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8F">Что может быть в качестве ключа словаря?</a></li>
+<li><a href="#args--kwargs">args &amp; kwargs</a></li>
+<li><a href="#%D0%B7%D0%B0%D0%BC%D1%8B%D0%BA%D0%B0%D0%BD%D0%B8%D0%B5-closure">Замыкание (closure)</a></li>
+<li><a href="#%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80-%D1%81-%D0%BF%D1%80%D0%BE%D0%BA%D0%B8%D0%B4%D1%8B%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC-%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9">Декоратор с прокидыванием переменной</a></li>
+<li><a href="#%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80-%D0%B8-%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80">Итератор и генератор</a></li>
+<li><a href="#%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-coroutine">Что такое coroutine?</a></li>
+<li><a href="#%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-future">Что такое future?</a></li>
+<li><a href="#%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-%D0%B4%D0%B5%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D1%80%D1%8B">Что такое дескрипторы?</a></li>
+<li><a href="#collections">collections</a></li>
+<li><a href="#pythopath">PYTHOPATH</a></li>
+<li><a href="#%D0%BA%D0%B0%D0%BA-%D0%BF%D0%BE%D0%BD%D1%8F%D1%82%D1%8C-%D1%85%D0%B5%D1%88%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D1%8B%D0%B9-%D0%BB%D0%B8-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82">Как понять хешируемый ли объект</a></li>
+<li><a href="#%D0%BA%D0%B0%D0%BA-%D0%BA%D0%BE%D0%B4%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D0%B8-%D0%B4%D0%B5%D0%BA%D0%BE%D0%B4%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B8">Как кодировать и декодировать строки</a></li>
+<li><a href="#%D0%BA%D0%B0%D0%BA%D0%B8%D0%B5-%D0%B2%D0%B8%D0%B4%D1%8B-%D1%81%D1%82%D1%80%D0%BE%D0%BA-%D0%B1%D1%8B%D0%B2%D0%B0%D1%8E%D1%82-%D0%B2-%D0%BF%D0%B8%D1%82%D0%BE%D0%BD%D0%B5">Какие виды строк бывают в питоне</a></li>
+<li><a href="#%D0%BA%D0%B0%D0%BA%D0%B8%D0%B5-%D0%BD%D1%8E%D0%B0%D0%BD%D1%81%D1%8B-%D0%B5%D1%81%D1%82%D1%8C-%D0%B2-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8-%D1%87%D0%B8%D1%81%D0%B5%D0%BB-%D0%BA%D0%B0%D0%BA-%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%B9">Какие нюансы есть в использовании чисел как ключей</a></li>
+</ul>
+</li>
+<li><a href="#memory-management">Memory Management</a>
+<ul>
+<li><a href="#%D0%BA%D0%B0%D0%BA-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%B5%D1%82%D1%81%D1%8F-%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F">Как создается переменная?</a></li>
+<li><a href="#memory-consumption">Memory consumption</a></li>
+<li><a href="#garbage-collector">Garbage collector</a></li>
+<li><a href="#%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4-%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BA%D0%BE%D0%BB%D0%BB%D0%B8%D0%B7%D0%B8%D0%B8-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B5%D1%82%D1%81%D1%8F-%D0%B2-python">Какой метод разрешения коллизии используется в Python?</a></li>
+</ul>
+</li>
+<li><a href="#oop">OOP</a>
+<ul>
+<li><a href="#property">Property</a></li>
+<li><a href="#classmethod-vs-staticmethod">Classmethod vs Staticmethod</a></li>
+<li><a href="#dataclass">Dataclass</a></li>
+<li><a href="#mro">MRO</a></li>
+<li><a href="#diamond-problem">Diamond problem</a></li>
+<li><a href="#mixin">Mixin</a></li>
+<li><a href="#metaclasses">Metaclasses</a></li>
+<li><a href="#%D0%B7%D0%B0%D1%87%D0%B5%D0%BC-%D0%BD%D1%83%D0%B6%D0%B5%D0%BD-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4-super">Зачем нужен метод super?</a></li>
+<li><a href="#%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-%D0%BC%D0%B0%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B-%D0%BA%D0%B0%D0%BA%D0%B8%D0%B5-%D0%BC%D0%B0%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B-%D0%B5%D1%81%D1%82%D1%8C-%D0%B8-%D0%B4%D0%BB%D1%8F-%D1%87%D0%B5%D0%B3%D0%BE-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%82%D1%81%D1%8F">Что такое магические методы? Какие магические методы есть и для чего используются?</a></li>
+<li><a href="#%D0%B7%D0%B0%D1%87%D0%B5%D0%BC-%D0%BD%D1%83%D0%B6%D0%B5%D0%BD-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4-super-1">Зачем нужен метод super?</a></li>
+<li><a href="#%D0%BC%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80%D1%8B-%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0-%D0%B2-python">Модификаторы доступа в python</a></li>
+</ul>
+</li>
+<li><a href="#concurrency">Concurrency</a>
+<ul>
+<li><a href="#gil-%E2%80%93-%D0%B7%D0%B0%D1%87%D0%B5%D0%BC-%D0%BD%D1%83%D0%B6%D0%B5%D0%BD">GIL – зачем нужен?</a></li>
+<li><a href="#thread">Thread</a></li>
+<li><a href="#mutex">Mutex</a></li>
+<li><a href="#semaphore">Semaphore</a></li>
+<li><a href="#race-condition">Race condition</a></li>
+<li><a href="#deadlock">Deadlock</a></li>
+<li><a href="#%D1%81%D0%BB%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8C-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B9-%D0%B2-%D0%BA%D0%BE%D0%BB%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%D1%85">Сложность операций в коллекциях</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="basic-python">Basic Python</h2>
+<h3 id="что-за-язык-python">Что за язык Python?</h3>
+<p>Высокоуровневый с динамической строгой типизацией.</p>
+<p>Python не разрешит сложить число <code>1</code> и строку <code>'7'</code> , потому ,что это значения разных типов. Нужно сначала либо сделать строку числом, либо число строкой.</p>
+<p>Динамически типизированные языки не требуют указывать тип, но и не определяют его сами.</p>
+<h3 id="почему-он-медленный">Почему он медленный?</h3>
+<ol>
+<li>Интерпретируемость</li>
+<li>Нету JIT-complier из коробки</li>
+<li>GIL</li>
+</ol>
+<h3 id="mutable--immutable-типы-данных">mutable / immutable типы данных</h3>
+<p>bool, int, float, tuple, str, frozenset, nonetype - <strong>immutable</strong>
+list, set, dict - <strong>mutable</strong></p>
+<p>Нужны оба типа для того, чтобы было меньше памяти использовано или же для дизайна.</p>
+<h3 id="bounded-and-unbounded-методы">Bounded and unbounded методы?</h3>
+<p>bounded — это тот метод, где нужно вызывать через объект класса и в методе есть self
+unbounded — это тот метод, которые не закреплены перед объектом и могут свободно вызываться без него (по факту staticmethod)</p>
+<h3 id="при-измени-значения-int-будет-ли-меняться-id">При измени значения int будет ли меняться id?</h3>
+<p>Да будет, потому что int — это неизменяемый тип данных</p>
+<h3 id="что-может-быть-в-качестве-ключа-словаря">Что может быть в качестве ключа словаря?</h3>
+<p>Могут быть: целые и действительные числа, строки, кортежи. Не может быть set, list, но может быть frozenset.</p>
+<h3 id="args--kwargs">args &amp; kwargs</h3>
+<p><code>*args</code> (неограниченное количество позиционных) - e.g. tuple, <code>**kwargs</code> (неограниченное количество именованных) - e.g. dict</p>
+<p>Грубо говоря, <code>*args</code> складывает все аргументы (которые даже не имеют названий переменных, а только значения) в tuple, а <code>**kwargs</code> требует, чтобы мы передавали название переменной в которую хотим сложить словарь</p>
+<p><code>**kwargs</code> — это аргументы, передаваемые в вызов при помощи имени (идентификатора), либо словаря с его распаковкой при помощи <code>**</code>.</p>
+<p><code>*args</code> — это аргументы, передаваемые в вызов в определённой последовательности (на определённых позициях), без указания их имён.</p>
+<h3 id="замыкание-closure">Замыкание (closure)</h3>
+<p>Замыкание (closure) — функция, которая находится внутри другой функции и ссылается на переменные объявленные в теле внешней функции (свободные переменные).</p>
+<p>Можем использовать:
+а) когда мы должны спрятать данные и не использовать глобальную переменную
+б) иногда использует место класса</p>
+<p>У всех объектов будет приватный атрибут <code>closure</code>, которые возвращает кортеж из cell objects, если это функция замыкания.</p>
+<p>Даже, если мы удалим внешнюю функцию, то вызывая объект функции все будет работать, несмотря на то, что конструкция стерта.</p>
+<h3 id="декоратор-с-прокидыванием-переменной">Декоратор с прокидыванием переменной</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">my_decorator</span>(input_arg):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">the_real_decorator</span>(function):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs):
+</span></span><span style="display:flex;"><span>            result <span style="color:#f92672">=</span> function(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> result
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> wrapper
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> the_real_decorator
+</span></span></code></pre></div><p>functools.wraps() — функцию, которая помогает сделать декорируемую функцию похожей на исходную, делая такие вещи, как сохранение doctstring исходной функции.</p>
+<p>Часто используется при создании декоратора.</p>
+<h3 id="итератор-и-генератор">Итератор и генератор</h3>
+<p><strong>Итератор</strong> — это объект, который возвращает свои элементы по одному за раз или же это итер. объект который содержит исчисляемое число значений, по которому можно итерироваться.</p>
+<p>В python это реализовано через методы iter и next</p>
+<ul>
+<li><code>iter</code> возвращает ссылку на итератор</li>
+<li><code>next</code> возвращает следующий элемент</li>
+</ul>
+<p><strong>Генератор</strong> — это объект, который сразу при создании не вычисляет значения всех своих элементов. ДЕРЖИТ ОДИН. Или другими словами, <strong>это итератор элементы которого можно итерировать только один раз.</strong></p>
+<p><strong>Преимущества yield:</strong></p>
+<p>• экономия памяти
+• не останавливается, а возобновляет работу</p>
+<p>Как создать:</p>
+<p>• Выражение-генератор можно вызывать через <code>(i for …)</code>
+• В функции вместо <code>return</code> использовать <code>yield</code></p>
+<p>Итератор не является генератором! Но любой генератор является итератором.</p>
+<blockquote>
+<p><code>range</code> не является генератором и там есть оператор <code>in</code> и там есть спец магические методы</p>
+</blockquote>
+<h3 id="что-такое-coroutine">Что такое coroutine?</h3>
+<p><strong>Корутина</strong> — это генератор, к которому добавлена возможность послать данные через метод <code>send</code>. То есть их можно запустить, остановить и перезапустить.</p>
+<h3 id="что-такое-future">Что такое future?</h3>
+<h3 id="что-такое-дескрипторы">Что такое дескрипторы?</h3>
+<p>Дескриптор – это механизм, где <code>__get__()</code>, <code>__set__()</code> и <code>__delete__()</code> перегружены, то есть смена поведения обновления, получения и удаления атрибута класса.</p>
+<h3 id="collections">collections</h3>
+<p>Модуль, в котором содержутся: <code>namedtuple, Counter, defaultdict, OrderedDict</code>.</p>
+<h3 id="pythopath">PYTHOPATH</h3>
+<p>Переменная среды PYTHONPATH используется в Python для указания списка каталогов, из которых можно импортировать модули. При запуске можно проверить переменную <code>sys.path</code>, чтобы узнать, по каким каталогам будет выполняться поиск при импорте чего-либо.</p>
+<p>Чтобы задать эту переменную из командной строки, используйте: <code>set PYTHONPATH=list;of;paths</code>.</p>
+<h3 id="как-понять-хешируемый-ли-объект">Как понять хешируемый ли объект</h3>
+<p>Объект называется хешируемым, если он имеет хеш-значение (целое число), которое никогда не изменяется на протяжении его жизненного цикла и возвращается методом <code>__hash__()</code>, и может сравниваться с другими объектами (реализует метод <code>__eq__()</code>). Равные хешируемые объекты должны иметь равные хеш-значения. Все стандартные неизменяемые объекты хешируемые. Все стандартные изменяемые объекты не хешируемые.</p>
+<h3 id="как-кодировать-и-декодировать-строки">Как кодировать и декодировать строки</h3>
+<p>Кодировать – перевести Юникод в байтовую строку. Вызвать метод <code>.encode()</code> у строки.</p>
+<p>Декодировать – восстановить строку из цепочки байт. Вызвать метод <code>.decode()</code> у объекта <code>str</code> или <code>bytes</code> (версии Питона 2 и 3 соответственно).</p>
+<p>В обоих случаях явно передавать кодировку, иначе будет использована та, что определена в системе по умолчанию. Быть готовым поймать исключения <code>UnicodeEncodeError</code>, <code>UnicodeDecodeError</code>.</p>
+<h3 id="какие-виды-строк-бывают-в-питоне">Какие виды строк бывают в питоне</h3>
+<p>Зависит от версии Питона. Во второй ветке два типа: однобайтные строки и Юникод представлены классами str и unicode соответственно. В третьем Питоне есть один вид строк str, который представляет собой Юникод. Однобайтных строк нет, вместо них есть тип bytes, то есть цепочка байт.</p>
+<h3 id="какие-нюансы-есть-в-использовании-чисел-как-ключей">Какие нюансы есть в использовании чисел как ключей</h3>
+<p>Числовые ключи в словарях подчиняются правилам сравнения чисел. Таким образом, <code>int(1)</code> и <code>float(1.0)</code> считаются одинаковым ключом. Однако из-за того, что значения типа float сохраняются приближенно, не рекомендуется использовать их в качестве ключей.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> {<span style="color:#66d9ef">True</span>: <span style="color:#e6db74">&#39;yes&#39;</span>, <span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;no&#39;</span>, <span style="color:#ae81ff">1.0</span>: <span style="color:#e6db74">&#39;maybe&#39;</span>}
+</span></span><span style="display:flex;"><span>{<span style="color:#66d9ef">True</span>: <span style="color:#e6db74">&#39;maybe&#39;</span>} 
+</span></span></code></pre></div><hr>
+<h2 id="memory-management">Memory Management</h2>
+<h3 id="как-создается-переменная">Как создается переменная?</h3>
+<ol>
+<li>Сначала создается объект со значением переменной</li>
+<li>Переменная начинает ссылаться на него</li>
+</ol>
+<h3 id="memory-consumption">Memory consumption</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>|    | Type                      | Value        |   Consumption |
+</span></span><span style="display:flex;"><span>|---:|:--------------------------|:-------------|--------------:|
+</span></span><span style="display:flex;"><span>|  0 | &lt;<span style="color:#f92672">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">int</span><span style="color:#960050;background-color:#1e0010">&#39;</span>&gt;             | 1            |            28 |
+</span></span><span style="display:flex;"><span>|  1 | &lt;<span style="color:#f92672">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">float</span><span style="color:#960050;background-color:#1e0010">&#39;</span>&gt;           | 1.12         |            24 |
+</span></span><span style="display:flex;"><span>|  2 | &lt;<span style="color:#f92672">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">decimal</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">Decimal</span><span style="color:#960050;background-color:#1e0010">&#39;</span>&gt; | 1.1200000000 |           104 |
+</span></span><span style="display:flex;"><span>|  3 | &lt;<span style="color:#f92672">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">str</span><span style="color:#960050;background-color:#1e0010">&#39;</span>&gt;             |              |            49 |
+</span></span><span style="display:flex;"><span>|  4 | &lt;<span style="color:#f92672">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">str</span><span style="color:#960050;background-color:#1e0010">&#39;</span>&gt;             | 1            |            50 |
+</span></span><span style="display:flex;"><span>|  5 | &lt;<span style="color:#f92672">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">dict</span><span style="color:#960050;background-color:#1e0010">&#39;</span>&gt;            | {}           |            64 |
+</span></span><span style="display:flex;"><span>|  6 | &lt;<span style="color:#f92672">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">set</span><span style="color:#960050;background-color:#1e0010">&#39;</span>&gt;             | {1}          |           216 |
+</span></span><span style="display:flex;"><span>|  7 | &lt;<span style="color:#f92672">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">dict</span><span style="color:#960050;background-color:#1e0010">&#39;</span>&gt;            | {1: None}    |           232 |
+</span></span><span style="display:flex;"><span>|  8 | &lt;<span style="color:#f92672">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">list</span><span style="color:#960050;background-color:#1e0010">&#39;</span>&gt;            | []           |            56 |
+</span></span><span style="display:flex;"><span>|  9 | &lt;<span style="color:#f92672">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">tuple</span><span style="color:#960050;background-color:#1e0010">&#39;</span>&gt;           | ()           |            40 |
+</span></span><span style="display:flex;"><span>| 10 | &lt;<span style="color:#f92672">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">list</span><span style="color:#960050;background-color:#1e0010">&#39;</span>&gt;            | [1]          |            64 |
+</span></span><span style="display:flex;"><span>| 11 | &lt;<span style="color:#f92672">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">int</span><span style="color:#960050;background-color:#1e0010">&#39;</span>&gt;             | 1            |            28 |
+</span></span><span style="display:flex;"><span>| 12 | &lt;<span style="color:#f92672">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">NoneType</span><span style="color:#960050;background-color:#1e0010">&#39;</span>&gt;        |              |            16 |
+</span></span></code></pre></div><p>Python не освобождает всю память обратно операционной системе как только он удаляет какой либо объект. Вместо этого, он использует дополнительный менеджер памяти, предназначенный для маленьких объектов (размер которых меньше чем 512 байт). Для работы с такими объектами он выделяет большие блоки памяти, в которых в дальнейшем будет хранится множество маленьких объектов.</p>
+<p>Как только один из маленьких объект удаляется — память из под него не переходит операционной системе, Python оставляет её для новых объектов с таким же размером. Если в одном из выделенных блоков памяти не осталось объектов, то Python может высвободить его операционной системе.</p>
+<h3 id="garbage-collector">Garbage collector</h3>
+<p>Стандартный интерпретатор питона (CPython) использует сразу два алгоритма:</p>
+<p>– подсчет ссылок
+– generational garbage collector (далее GC)</p>
+<p><strong>1. Алгоритм подсчета ссылок</strong>. Объекты удаляются как только на них больше нет ссылок. Он постоянно работает в режиме реального времени. Не нужен объект – убрали.</p>
+<p>Алгоритм очень простой и эффективный, но у него есть один большой недостаток. Он не умеет определять циклические ссылки. Именно из-за этого, в питоне существует дополнительный сборщик, именуемый GC, который следит за объектами с потенциальными циклическими ссылками.</p>
+<table>
+<thead>
+<tr>
+<th>Минусы</th>
+<th>Плюсы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>циклические ссылки</td>
+<td>объекты удаляются сразу как только они не нужны</td>
+</tr>
+<tr>
+<td>блокирование потоков</td>
+<td></td>
+</tr>
+<tr>
+<td>дополнительные накладные расходы на память и cpu</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Проверить текущее кол-во ссылок можно через <code>sys.getrefcount(foo))</code>.</p>
+<p><strong>2. GC</strong> не работает в режиме реального времени и запускается периодически. Сборщик мусора разделяет все объекты на 3 поколения (генерации). Новые объекты попадают в первое поколение. Если новый объект выживает процесс сборки мусора, то он перемещается в следующее поколение. Чем выше поколение, тем реже оно сканируется на мусор.</p>
+<p>Чтобы узнать порог отсеивания: <code>gc.get_threshold()</code> → <strong>(700, 10, 10).</strong></p>
+<p><em>Useful libs:</em></p>
+<ul>
+<li><a href="https://pypi.org/project/memory-profiler/">Memory profiler</a></li>
+<li><a href="https://mg.pov.lt/objgraph/">Object graph</a></li>
+</ul>
+<h3 id="какой-метод-разрешения-коллизии-используется-в-python">Какой метод разрешения коллизии используется в Python?</h3>
+<p>В Python используется метод открытой адресации.</p>
+<p><em>More about collisions →</em> <a href="Computer%20Science.md#%D0%9F%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F">Computer Science</a></p>
+<h2 id="oop">OOP</h2>
+<h3 id="property">Property</h3>
+<p>Обеспечивает интерфейс для атрибутов экземпляра класса. Он инкапсулирует атрибуты экземпляров и позволяет устанавливать setter, getter, deleter.</p>
+<h3 id="classmethod-vs-staticmethod">Classmethod vs Staticmethod</h3>
+<table>
+<thead>
+<tr>
+<th>classmethod</th>
+<th>staticmethod</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Принимает cls как первый аргумент.</td>
+<td>Не принимает дополнительных параметров.</td>
+</tr>
+<tr>
+<td>можно обращаться только к атрибутам класса, но не объекта.</td>
+<td>Через этот метод нельзя обратиться ни к объектам, ни к методам класса.</td>
+</tr>
+<tr>
+<td>Используем тогда, когда нужен доступ только к методам класса. Может быть использован как фабрика-метод, который будет возвращать объект класса.</td>
+<td>Используем тогда, когда ни используется объект класса, ни атрибуты класса. Utility-type методы, которые ничего не знают о классе.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dataclass">Dataclass</h3>
+<p>Используем, когда хотим хранить какие-то данные внутри класса.
+Следующие методы будут автоматически сгенерированы и код будет короче:</p>
+<ul>
+<li><code>init</code></li>
+<li><code>repr</code></li>
+<li><code>eq</code></li>
+</ul>
+<h3 id="mro">MRO</h3>
+<p>Это набор правил, по которому формируется схема наследования.</p>
+<p>В python 2 алгоритм поиска в глубину: от текущего класса к родительскому и выше
+В python 3 алгоритм поиска в ширину: текущий класс и по всем его родителям</p>
+<p>Можно вызвать через <code>Class.mro()</code>, чтобы увидеть схему наследования.</p>
+<h3 id="diamond-problem">Diamond problem</h3>
+<p>Коренной класс <code>А</code> имеет детей <code>B</code> &amp; <code>C</code>, а <code>D</code> наследуется от <code>B</code> &amp; <code>C</code>.</p>
+<p><img src="/mro.png" alt="mro"></p>
+<h3 id="mixin">Mixin</h3>
+<p>Это небольшие классы, которые используются для того, чтобы дать дополнительный функционал другому классу. Например, полезно, когда:**</p>
+<ul>
+<li>хотим добавить множество функций для класса</li>
+<li>хотим использовать конкретную функцию во множестве разных классов</li>
+</ul>
+<p>При создании класса в компании дописываем Mixin.</p>
+<h3 id="metaclasses">Metaclasses</h3>
+<p>Метаклассы — шаблоны для создания классов. Объекты создаются классом, а классы создаются метаклассом. Методы: <code>prepare</code> (подготавливает данные), <code>new</code>(создает класс), <code>init</code>(инициализацию), <code>call</code> (создание класса)</p>
+<p>Например, <code>type</code> — это метакласс.</p>
+<h3 id="зачем-нужен-метод-super">Зачем нужен метод super?</h3>
+<p>Позволяет обращаться к классу-родителю. Основное ее применение и польза – получения доступа из класса наследника к методам класса-родителя в том случае, если наследник переопределил эти методы.</p>
+<p>Например, мы хотим внести какие-то изменения в дочернем классе не вызывая материнский объект. Вместо этого мы пишем <code>super.our_method()</code></p>
+<p>Чаще всего в <code>init</code> используется.</p>
+<h3 id="что-такое-магические-методы-какие-магические-методы-есть-и-для-чего-используются">Что такое магические методы? Какие магические методы есть и для чего используются?</h3>
+<p>Это специальные методы, с помощью которых вы можете добавить в ваши классы «магию». Они всегда обрамлены двумя нижними подчеркиваниями.</p>
+<p><strong>Конструирование и инициализация</strong></p>
+<ol>
+<li><code>__new__(cls, [...)</code> — это первый метод, который будет вызван при инициализации объекта. Он принимает в качестве параметров класс и потом любые другие аргументы, которые будут переданы в <code>__init__</code>; переписывается для кастомизации создании класса и возвращает инстанс класса</li>
+<li><code>__init__(self, [...)</code> — инициализатор класса.</li>
+<li><code>__del__</code> — это его деструктор</li>
+</ol>
+<p><strong>Магические методы сравнения</strong></p>
+<p>• <code>__eq__(self, other)</code>Определяет поведение оператора равенства, <code>==</code>.</p>
+<p><strong>Числовые магические методы</strong></p>
+<p>• <code>__abs__(self)</code>Определяет поведение для встроенной функции <code>abs()</code>.
+• <code>__round__(self, n)</code>Определяет поведение для встроенной функции <code>round()</code>. <code>n</code> это число знаков после запятой, до которого округлить.</p>
+<p><strong>Представление своих классов</strong></p>
+<p>• <code>__str__(self)</code>Определяет поведение функции <code>str()</code>, вызванной для экземпляра вашего класса.
+• <code>__repr__(self)</code> делает то же самое, что и <code>__str__(self)</code>, но главное отличие от <code>str()</code> в целевой аудитории. <code>repr()</code> больше предназначен для машинно-ориентированного вывода (более того, это часто должен быть валидный код на Питоне), а <code>str()</code> предназначен для чтения людьми.
+• <code>__dir__(self)</code>Определяет поведение функции <code>dir()</code>, вызванной на экземпляре вашего класса. Этот метод должен возвращать пользователю список атрибутов.</p>
+<h3 id="зачем-нужен-метод-super-1">Зачем нужен метод super?</h3>
+<p>Позволяет обращаться к классу-родителю. Основное ее применение и польза – получения доступа из класса наследника к методам класса-родителя в том случае, если наследник переопределил эти методы.</p>
+<p>Например, мы хотим внести какие-то изменения в дочернем классе не вызывая материнский объект. Вместо этого мы пишем <code>super.our_method()</code></p>
+<p>Чаще всего в <code>init</code> используется.</p>
+<h3 id="модификаторы-доступа-в-python">Модификаторы доступа в python</h3>
+<p><code>__private</code> существует только внутри класса, даже с наследованием невозможно получить
+<code>_protected</code> можно пронаследовать</p>
+<p>Через protected доступ будет в текущем классе и в дочерних классах, но снаружи вызвать его будет нельзя. Отличие в том, что через private доступа не будет и будет кидать <code>AttributeError</code>, а в protected доступ все еще будет.</p>
+<p>По факту вызвать все равно можно даже private через objectclass._Class__privateatr</p>
+<h2 id="concurrency">Concurrency</h2>
+<h3 id="gil--зачем-нужен">GIL – зачем нужен?</h3>
+<p>GIL является самым простым способом избежать конфликтов при одновременном обращении разных потоков к одним и тем же участкам памяти. Когда один поток захватывает его, GIL, работая по принципу мьютекса, блокирует остальные. Нет параллельных потоков — нет конфликтов при обращении к разделяемым объектам.</p>
+<h3 id="thread">Thread</h3>
+<p>Пото́к — наименьшая единица обработки, исполнение которой может быть назначено ядром операционной системы. Поток выполнения находится внутри процесса.</p>
+<h3 id="mutex">Mutex</h3>
+<p>A mutual exclusion lock or mutex lock is a synchronization primitive intended to prevent a race condition. Mutex следит за тем, чтобы выполнялся только один тред.</p>
+<p><code>threading.Lock()</code> - mutex in Python</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># create a lock</span>
+</span></span><span style="display:flex;"><span>lock <span style="color:#f92672">=</span> Lock()
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># acquire the lock</span>
+</span></span><span style="display:flex;"><span>lock<span style="color:#f92672">.</span>acquire()
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># release the lock</span>
+</span></span><span style="display:flex;"><span>lock<span style="color:#f92672">.</span>release()
+</span></span></code></pre></div><h3 id="semaphore">Semaphore</h3>
+<p>Инструмент, который ограничивает количество потоков, которое может быть использовано Lock() объектом. По факту это расширение мьютекса.</p>
+<p>То есть, если в семафоре стоит <code>“1”</code>, то он работает также как и мьютекс.</p>
+<p>Можно также использовать семафору для того, чтобы ограничить:</p>
+<ul>
+<li>кол-во калькуляций</li>
+<li>кол-во открытых сокетов</li>
+<li>кол-во операций I/O</li>
+</ul>
+<h3 id="race-condition">Race condition</h3>
+<p>Два треда запускают один и тот же код и могут получить доступ, либо изменять один и тот же ресурс, оставляя ресурс в непонятном виде.</p>
+<h3 id="deadlock">Deadlock</h3>
+<p>A deadlock is a concurrency failure mode where a thread or threads wait for a condition that never occurs.</p>
+<p>Например:</p>
+<ul>
+<li>поток A waits for B and B waits for A</li>
+<li>поток ждет сам себя</li>
+<li>неправильное расположение <code>acquire</code> среди потоков</li>
+<li>после <code>acquire</code> потока-1 происходит exception и до <code>release</code> не доходит</li>
+</ul>
+<p>Чтобы избежать блокировок:</p>
+<ul>
+<li>Использовать контексные менеджеры</li>
+<li>Использовать timeout</li>
+<li>Всегда acquire locks в верном порядке</li>
+</ul>
+<p><em>Reference:</em></p>
+<p><a href="https://superfastpython.com/thread-deadlock-in-python/">How to Identify a Deadlock in Python</a></p>
+<hr>
+<h3 id="сложность-операций-в-коллекциях">Сложность операций в коллекциях</h3>
+<blockquote>
+<p><strong><code>list</code></strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Average Case</th>
+<th><a href="http://en.wikipedia.org/wiki/Amortized_analysis">http://en.wikipedia.org/wiki/Amortized_analysis</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Copy</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Append[1]</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>Pop last</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>Pop intermediate[2]</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Insert</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Get Item</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>Set Item</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>Delete Item</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Iteration</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Get Slice</td>
+<td>O(k)</td>
+<td>O(k)</td>
+</tr>
+<tr>
+<td>Del Slice</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Set Slice</td>
+<td>O(k+n)</td>
+<td>O(k+n)</td>
+</tr>
+<tr>
+<td>Extend[1]</td>
+<td>O(k)</td>
+<td>O(k)</td>
+</tr>
+<tr>
+<td><a href="http://svn.python.org/projects/python/trunk/Objects/listsort.txt">http://svn.python.org/projects/python/trunk/Objects/listsort.txt</a></td>
+<td>O(n log n)</td>
+<td>O(n log n)</td>
+</tr>
+<tr>
+<td>Multiply</td>
+<td>O(nk)</td>
+<td>O(nk)</td>
+</tr>
+<tr>
+<td>x in s</td>
+<td>O(n)</td>
+<td></td>
+</tr>
+<tr>
+<td>min(s), max(s)</td>
+<td>O(n)</td>
+<td></td>
+</tr>
+<tr>
+<td>Get Length</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong><code>collections.deque</code></strong> represented internally as a doubly linked list.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Average Case</th>
+<th>Am. Worst Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Copy</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>append</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>appendleft</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>pop</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>popleft</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>extend</td>
+<td>O(k)</td>
+<td>O(k)</td>
+</tr>
+<tr>
+<td>extendleft</td>
+<td>O(k)</td>
+<td>O(k)</td>
+</tr>
+<tr>
+<td>rotate</td>
+<td>O(k)</td>
+<td>O(k)</td>
+</tr>
+<tr>
+<td>remove</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Get Length</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong><code>set</code></strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Average case</th>
+<th>Worst Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x in s</td>
+<td>O(1)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Union s</td>
+<td>t</td>
+<td><a href="https://wiki.python.org/moin/TimeComplexity_%28SetCode%29">https://wiki.python.org/moin/TimeComplexity_%28SetCode%29</a></td>
+</tr>
+<tr>
+<td>Intersection s&amp;t</td>
+<td>O(min(len(s), len(t)))</td>
+<td>O(len(s) * len(t))</td>
+</tr>
+<tr>
+<td>Multiple intersection s1&amp;s2&amp;..&amp;sn</td>
+<td></td>
+<td>(n-1)*O(l) where l is max(len(s1),..,len(sn))</td>
+</tr>
+<tr>
+<td>Difference s-t</td>
+<td>O(len(s))</td>
+<td></td>
+</tr>
+<tr>
+<td>s.difference_update(t)</td>
+<td>O(len(t))</td>
+<td></td>
+</tr>
+<tr>
+<td>Symmetric Difference s^t</td>
+<td>O(len(s))</td>
+<td>O(len(s) * len(t))</td>
+</tr>
+<tr>
+<td>s.symmetric_difference_update(t)</td>
+<td>O(len(t))</td>
+<td>O(len(t) * len(s))</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong><code>dict</code></strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Average Case</th>
+<th>Amortized Worst Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>k in d</td>
+<td>O(1)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Copy[3]</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Get Item</td>
+<td>O(1)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Set Item[1]</td>
+<td>O(1)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Delete Item</td>
+<td>O(1)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Iteration[3]</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+</tbody>
+</table>
+<p><em>Reference</em>: <a href="https://wiki.python.org/moin/TimeComplexity">TimeComplexity - Python Wiki</a></p>
+</article>
+
+        </main><footer id="footer">
+    
+</footer>
+</body>
+</html>
