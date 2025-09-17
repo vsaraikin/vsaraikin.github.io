@@ -1,0 +1,24 @@
+baseURL = "https://vsaraikin.github.io"
+languageCode = "en-us"
+title = "Vladimir Saraikin"
+theme = "ritzy"
+
+[params]
+  author = "Vladimir Saraikin"
+  description = "Backend engineer & quantitative developer passionate about algorithmic trading"
+
+[menu]
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 10
+
+  [[menu.main]]
+    name = "Blog"
+    url = "/posts/"
+    weight = 20
+
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 30

@@ -1,0 +1,11 @@
+.claude
+.vscode
+
+# Hugo
+public/
+.hugo_build.lock
+resources/_gen/
+
+# Local development
+.DS_Store
+node_modules/
