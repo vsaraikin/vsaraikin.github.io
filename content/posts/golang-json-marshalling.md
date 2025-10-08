@@ -11,16 +11,16 @@ This post benchmarks **8 of the fastest JSON libraries** for Go, explains *why* 
 
 ## The Contenders
 
-| Library           | Type             | Key Feature                                   |
-| ----------------- | ---------------- | --------------------------------------------- |
-| **encoding/json** | Standard Library | Baseline, most compatible                     |
-| **sonic**         | Reflection + JIT | JIT compilation + SIMD instructions           |
-| **go-json**       | Reflection       | Optimized reflection with minimal allocations |
-| **jsoniter**      | Reflection       | Drop-in replacement, configurable modes       |
-| **segmentio**     | Reflection       | Clean API, high performance                   |
-| **easyjson**      | Code Generation  | Pre-generated marshaling code                 |
-| **fastjson**      | Parse-only       | Zero-allocation parser, no structs            |
-| **simdjson-go**   | Parse-only       | SIMD-accelerated parsing (port of simdjson)   |
+| Library                                                 | Type             | Key Feature                                   |
+| ------------------------------------------------------- | ---------------- | --------------------------------------------- |
+| **encoding/json**                                       | Standard Library | Baseline, most compatible                     |
+| **[sonic](https://github.com/bytedance/sonic)**         | Reflection + JIT | JIT compilation + SIMD instructions           |
+| **[go-json](https://github.com/goccy/go-json)**         | Reflection       | Optimized reflection with minimal allocations |
+| **[jsoniter](https://github.com/json-iterator/go)**     | Reflection       | Drop-in replacement, configurable modes       |
+| **[segmentio](https://github.com/segmentio/encoding)**  | Reflection       | Clean API, high performance                   |
+| **[easyjson](https://github.com/mailru/easyjson)**      | Code Generation  | Pre-generated marshaling code                 |
+| **[fastjson](https://github.com/valyala/fastjson)**     | Parse-only       | Zero-allocation parser, no structs            |
+| **[simdjson-go](https://github.com/minio/simdjson-go)** | Parse-only       | SIMD-accelerated parsing (port of simdjson)   |
 
 ## Why Are They Fast?
 
@@ -105,120 +105,84 @@ Best reading performance, but no struct marshaling.
 
 ## Benchmark Results
 
-I ran benchmarks on three struct types:
+Benchmarks on three struct types:
 
 1. **Simple** — 3 fields (int, string, int)
 2. **Nested** — 8 fields including slices, maps, timestamps
 3. **Complex** — Deeply nested with relationships
 
-Apple M1, macOS, Go 1.25
-Iterations: 10,000 per test
+**Test environment:** Apple M1, Go 1.25.1, `-benchtime=2s`
 
-### Marshal Performance (MB/s)
+### Marshal Performance
 
 ```
 Simple Struct (100 objects):
-Library         MB/s    Relative
-sonic           892     4.2x
-go-json         624     2.9x
-segmentio       601     2.8x
-jsoniter        580     2.7x
-easyjson        712     3.4x  (requires codegen)
-encoding/json   213     1.0x (baseline)
+Library         ns/op    B/op    allocs    Relative
+easyjson        75       128     1         363x
+jsoniter        8,949    16,927  102       3.1x
+go-json         19,413   16,928  102       1.4x
+sonic           19,256   17,249  103       1.4x
+segmentio       25,327   20,128  202       1.1x
+stdlib          27,325   16,933  102       1.0x
 
 Nested Struct (100 objects):
-Library         MB/s    Relative
-sonic           654     3.8x
-easyjson        587     3.4x
-go-json         421     2.4x
-segmentio       408     2.4x
-jsoniter        395     2.3x
-encoding/json   172     1.0x
+Library         ns/op    B/op     allocs   Relative
+easyjson        658      960      8        280x
+jsoniter        76,442   115,907  802      2.4x
+sonic           106,749  119,282  803      1.7x
+go-json         116,918  115,898  802      1.6x
+segmentio       152,342  127,108  902      1.2x
+stdlib          183,988  117,974  803      1.0x
 
 Complex Struct (50 objects):
-Library         MB/s    Relative
-sonic           521     3.6x
-easyjson        489     3.4x
-go-json         338     2.3x
-jsoniter        312     2.2x
-segmentio       305     2.1x
-encoding/json   145     1.0x
+Library         ns/op    B/op     allocs   Relative
+easyjson        2,450    2,204    15       158x
+jsoniter        117,440  168,021  753      3.3x
+sonic           183,264  172,705  754      2.1x
+go-json         222,197  168,003  753      1.7x
+segmentio       312,088  177,607  803      1.2x
+stdlib          387,108  173,381  753      1.0x
 ```
 
-### Unmarshal Performance (MB/s)
+### Unmarshal Performance
 
 ```
 Simple Struct:
-Library         MB/s    Relative
-sonic           1124    5.1x
-easyjson        987     4.5x
-go-json         682     3.1x
-jsoniter        651     3.0x
-segmentio       624     2.8x
-encoding/json   220     1.0x
+Library         ns/op     B/op    allocs   Relative
+easyjson        100       80      3        448x
+fastjson        6,049     0       0        7.4x
+go-json         21,966    9,961   201      2.0x
+segmentio       23,734    1,056   100      1.9x
+sonic           28,976    10,574  203      1.6x
+jsoniter        32,681    12,565  737      1.4x
+stdlib          44,933    1,224   103      1.0x
 
 Nested Struct:
-Library         MB/s    Relative
-sonic           876     4.8x
-easyjson        824     4.5x
-go-json         534     2.9x
-jsoniter        502     2.7x
-segmentio       485     2.6x
-encoding/json   183     1.0x
+Library         ns/op     B/op     allocs   Relative
+easyjson        134       208      4        1,678x
+fastjson        20,845    3        0        10.8x
+go-json         105,703   96,039   1,401    2.1x
+segmentio       109,770   55,426   1,300    2.1x
+sonic           118,399   97,770   1,403    1.9x
+jsoniter        134,685   86,228   2,674    1.7x
+stdlib          225,339   55,636   1,304    1.0x
 
 Complex Struct:
-Library         MB/s    Relative
-sonic           712     4.6x
-easyjson        678     4.4x
-go-json         421     2.7x
-jsoniter        398     2.6x
-segmentio       382     2.5x
-encoding/json   155     1.0x
-```
-
-### Parse-Only Performance
-
-```
-Library         MB/s    Relative
-simdjson-go     3421    15.6x
-fastjson        2687    12.3x
-encoding/json   219     1.0x
-```
-
-## Visualization
-
-Here's how the libraries stack up across different operations:
-
-Marshal Performance (Relative to stdlib):
-
-```
-sonic       ████████████████ 4.2x
-easyjson    ██████████████ 3.4x
-go-json     ███████████ 2.9x
-segmentio   ███████████ 2.8x
-jsoniter    ███████████ 2.7x
-stdlib      ████ 1.0x
-```
-
-Unmarshal Performance (Relative to stdlib):
-
-```
-sonic       █████████████████████ 5.1x
-easyjson    ██████████████████ 4.5x
-go-json     ████████████ 3.1x
-jsoniter    ████████████ 3.0x
-segmentio   ███████████ 2.8x
-stdlib      ████ 1.0x
+Library         ns/op     B/op     allocs   Relative
+easyjson        143       208      4        3,681x
+fastjson        55,149    28       0        9.6x
+go-json         257,463   191,653  2,251    2.0x
+sonic           276,056   194,849  2,253    1.9x
+segmentio       277,387   76,494   2,200    1.9x
+jsoniter        355,029   164,246  5,818    1.5x
+stdlib          527,415   76,778   2,205    1.0x
 ```
 
 ## Running the Benchmark Yourself
 
-The full benchmark code is available in the [repository](github.com/vsaraikin/vsaraikin.github.io):
-
 ```bash
 cd benchmarks/json-benchmark
-go mod download
-go run main.go
+./run.sh
 ```
 
 For easyjson support:
