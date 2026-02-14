@@ -128,7 +128,7 @@ perf report
 
 The interactive `perf report` UI:
 
-```
+```text
 Samples: 42K of event 'cycles', Event count (approx.): 28472918472
 Overhead  Command      Shared Object        Symbol
   24.32%  my_program   my_program           [.] process_data
@@ -161,7 +161,7 @@ perf record -C 0,1 ./program
 
 ### Understanding the Output
 
-```
+```text
 -   24.32%    24.32%  my_program  my_program      [.] process_data
    - 24.32% process_data
       - 18.47% called_from_main
@@ -208,7 +208,7 @@ perf top -g
 
 Output:
 
-```
+```text
 Samples: 82K of event 'cycles', 4000 Hz, Event count: 41847291847
 Overhead  Shared Object        Symbol
   12.34%  [kernel]             [k] _raw_spin_lock
@@ -223,6 +223,12 @@ Flame graphs are the best way to visualize profiling data. They show:
 
 - X-axis: Proportion of CPU time (wider = more time)
 - Y-axis: Call stack depth (bottom = entry point)
+
+Here's what a CPU flame graph looks like in practice — this one profiles a bash workload:
+
+![CPU Flame Graph example from perf profiling](static/cpu-flamegraph.png)
+
+Each box is a function. The wider it is, the more CPU samples it appeared in. You read from bottom (entry point) up (leaf functions). Towers of boxes show deep call chains; plateaus show where time is actually spent.
 
 ### Generating Flame Graphs
 
@@ -465,7 +471,7 @@ perf top -a                          # Live all CPUs
 
 ## Cheatsheet
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │ Task                        │ Command                          │
 ├─────────────────────────────┼──────────────────────────────────┤

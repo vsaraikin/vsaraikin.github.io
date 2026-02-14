@@ -18,7 +18,7 @@ In 1992, Fidelity Investments had a problem. Their traders were communicating wi
 
 Robert Lamoureux and Chris Morstatt at Fidelity created FIX to solve this. Instead of voice, they wanted machine-readable data.
 
-```
+```text
 1992: FIX 2.7 - Initial release (Fidelity + Salomon Brothers)
 1995: FIX 4.0 - First public version
 1998: FIX 4.2 - Most widely adopted version
@@ -62,7 +62,7 @@ Starting with FIX 5.0, these layers were formally separated into FIXT (session) 
 
 Every FIX message follows the same pattern:
 
-```
+```text
 Header + Body + Trailer
 ```
 
@@ -72,7 +72,7 @@ Fields are `tag=value` pairs separated by the SOH character (ASCII 0x01, often s
 
 Here's a New Order Single (buying 7000 shares of MSFT):
 
-```
+```text
 8=FIX.4.4|9=148|35=D|34=1080|49=TESTBUY1|52=20180920-18:14:19.508|
 56=TESTSELL1|11=636730640278898634|15=USD|21=2|38=7000|40=1|54=1|
 55=MSFT|60=20180920-18:14:19.492|10=092|
@@ -211,7 +211,7 @@ This is why FIX can survive network failures without losing orders.
 
 ### Execution Report Example
 
-```
+```text
 8=FIX.4.4|9=289|35=8|34=1090|49=TESTSELL1|52=20180920-18:23:53.671|
 56=TESTBUY1|6=113.35|11=636730640278898634|14=3500|15=USD|17=20636730646335310000|
 21=2|31=113.35|32=3500|37=20636730646335310000|38=7000|39=1|40=1|54=1|55=MSFT|
@@ -224,7 +224,7 @@ This says: Your 7000-share MSFT order (tag 11) is partially filled (tag 39=1). 3
 
 Tags 5000-9999 (and 20000-39999 in newer versions) are reserved for custom fields. Trading partners can agree on their own meanings:
 
-```
+```text
 8=FIX.4.4|...|5001=INTERNAL_STRATEGY_7|5002=URGENT|...
 ```
 
@@ -236,7 +236,7 @@ Some data needs to repeat—like multiple legs of a spread order or multiple par
 
 Repeating groups start with a count field, followed by the repeated fields:
 
-```
+```text
 453=2|                    ← Number of parties (NoPartyIDs)
   448=BROKER1|447=D|452=1|  ← Party 1
   448=TRADER1|447=D|452=11| ← Party 2
@@ -291,7 +291,7 @@ Binance doesn't use the standard FIX Logon fields for auth. Instead, you sign a 
 
 The signature payload is five fields joined by SOH:
 
-```
+```text
 MsgType(A) | SenderCompID | TargetCompID | MsgSeqNum | SendingTime
 ```
 

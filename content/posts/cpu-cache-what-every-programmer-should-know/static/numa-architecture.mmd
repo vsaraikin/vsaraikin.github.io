@@ -1,0 +1,18 @@
+graph TB
+    subgraph S0["Socket 0"]
+        C0[Core 0] & C1[Core 1] & C2[Core 2] & C3[Core 3]
+        L3_0["L3 Cache"]
+        MC0["Memory Controller\n~100 ns local"]
+        C0 & C1 & C2 & C3 --> L3_0
+        L3_0 --> MC0
+    end
+
+    subgraph S1["Socket 1"]
+        C4[Core 4] & C5[Core 5] & C6[Core 6] & C7[Core 7]
+        L3_1["L3 Cache"]
+        MC1["Memory Controller\n~150 ns remote"]
+        C4 & C5 & C6 & C7 --> L3_1
+        L3_1 --> MC1
+    end
+
+    MC0 <-->|"Interconnect\n(QPI/UPI)"| MC1

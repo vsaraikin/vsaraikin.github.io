@@ -1,0 +1,15 @@
+stateDiagram-v2
+    [*] --> Invalid
+
+    Invalid --> Shared : Read (fetch from RAM)
+    Invalid --> Exclusive : Read (no other cache)
+
+    Shared --> Modified : Write
+    Shared --> Invalid : Other core writes
+
+    Exclusive --> Modified : Write
+    Exclusive --> Shared : Other core reads
+    Exclusive --> Invalid : Other core writes
+
+    Modified --> Shared : Other core reads (writeback)
+    Modified --> Invalid : Other core writes (writeback)

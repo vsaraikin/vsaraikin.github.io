@@ -18,7 +18,7 @@ Not a bug. IEEE 754 working as designed.
 
 Computers store numbers in binary (powers of 2). Most decimal fractions can't be represented exactly. The closest float64 can get to 0.1 is:
 
-```
+```text
 0.1000000000000000055511151231257827021181583404541015625
 ```
 
@@ -42,7 +42,7 @@ Three options in Go. All slower than float64.
 
 ### Addition
 
-```
+```text
 Library      ns/op    B/op    allocs   vs float64
 float64      0.32     0       0        1.0x
 govalues     5.70     0       0        17.8x
@@ -52,7 +52,7 @@ shopspring   99.11    176     6        311x
 
 ### Multiplication
 
-```
+```text
 Library      ns/op    B/op    allocs   vs float64
 float64      0.31     0       0        1.0x
 govalues     5.67     0       0        18.3x
@@ -62,7 +62,7 @@ shopspring   38.20    80      2        123x
 
 ### Division
 
-```
+```text
 Library      ns/op    B/op    allocs   vs float64
 float64      0.32     0       0        1.0x
 cockroach    18.54    16      1        58.4x
@@ -74,7 +74,7 @@ Division kills govalues because it needs more precision than 19 digits can provi
 
 ### Complex ((price × qty) + tax - discount)
 
-```
+```text
 Library      ns/op    B/op    allocs   vs float64
 float64      0.32     0       0        1.0x
 govalues     27.55    0       0        86.5x

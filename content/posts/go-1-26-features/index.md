@@ -34,7 +34,7 @@ If your service has significant GC pressure, this is the single biggest performa
 
 The runtime eliminated the `_Psyscall` processor state, which was an intermediate state that goroutines transitioned through during cgo calls. Removing it cuts the baseline overhead of every cgo call by about 30%.
 
-```
+```text
 BenchmarkCgoCall-8    28.55ns → 19.02ns    (-33%)
 ```
 
@@ -140,7 +140,7 @@ The key difference from `go vet`: these fixes are safe to apply automatically. T
 
 `io.ReadAll` now uses exponentially-sized intermediate buffers instead of growing linearly. Result: **~2x faster, ~50% less memory** for typical payloads.
 
-```
+```text
 ReadAll/65536-8    12,500ns → 6,250ns    (-50%)
 allocs:            4,096B → 2,048B       (-50%)
 ```

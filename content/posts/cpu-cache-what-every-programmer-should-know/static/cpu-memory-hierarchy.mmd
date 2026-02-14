@@ -1,0 +1,14 @@
+flowchart TB
+    subgraph CPU[CPU Core]
+        REG[Registers - 0.25ns - 256 bytes]
+        L1[L1 Cache - 1ns - 64KB]
+        L2[L2 Cache - 4ns - 1MB]
+    end
+
+    L3[L3 Cache Shared - 12ns - 64MB]
+    RAM[RAM - 100ns - 128GB]
+
+    REG --> L1
+    L1 --> L2
+    L2 --> L3
+    L3 --> RAM

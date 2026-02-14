@@ -1,0 +1,17 @@
+flowchart TD
+    A["CPU generates\nvirtual address X"] --> B{"TLB\nlookup"}
+    B -->|Hit ~1 cycle| C{"L1 Cache\nlookup"}
+    B -->|Miss| PW["Page walk\n4 levels\n100-1000 cycles"]
+    PW --> C
+
+    C -->|Hit ~4 cycles| Done["Data returned"]
+    C -->|Miss| D{"L2 Cache\nlookup"}
+
+    D -->|Hit ~12 cycles| Done
+    D -->|Miss| E{"L3 Cache\nlookup"}
+
+    E -->|Hit ~40 cycles| Done
+    E -->|Miss| F{"RAM access"}
+
+    F -->|"Local NUMA\n~100 ns"| Done
+    F -->|"Remote NUMA\n~150 ns"| Done

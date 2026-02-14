@@ -116,7 +116,7 @@ Benchmarks on three struct types:
 
 ### Marshal Performance
 
-```
+```text
 Simple Struct (100 objects):
 Library         ns/op    B/op    allocs    Relative
 easyjson        75       128     1         363x
@@ -147,7 +147,7 @@ stdlib          387,108  173,381  753      1.0x
 
 ### Unmarshal Performance
 
-```
+```text
 Simple Struct:
 Library         ns/op     B/op    allocs   Relative
 easyjson        100       80      3        448x

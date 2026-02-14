@@ -1,0 +1,7 @@
+flowchart TD
+    VA["Virtual Address: 0x7fff5678"] --> Split
+    Split --> VPN["Page Number\n0x7fff5"]
+    Split --> Offset["Offset\n0x678"]
+    VPN --> PT["Page Table\nVPN 0x7fff5 → PFN X"]
+    PT --> PA["Physical Address\n(X × 4096) + 0x678"]
+    Offset --> PA
