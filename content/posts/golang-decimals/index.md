@@ -1,8 +1,8 @@
 ---
-title: "Float64 Math is Broken. Comparing Go Decimal Libraries"
+title: "How Do Go Decimal Packages Work Under the Hood?"
 date: 2025-11-19
 draft: false
-description: "The classic 0.1 + 0.2 problem, three decimal libraries, and benchmarks on why correctness costs 1000x performance."
+description: "Inside shopspring/decimal: what type Decimal hides, why .Add allocates 6 times, and how three libraries trade precision for speed."
 ---
 
 ## The 0.1 + 0.2 Problem
