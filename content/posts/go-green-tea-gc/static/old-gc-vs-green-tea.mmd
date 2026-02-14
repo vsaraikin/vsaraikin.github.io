@@ -1,0 +1,29 @@
+graph LR
+    subgraph OLD["Old GC: Graph Flood"]
+        direction TB
+        W1[Work Stack<br>LIFO] --> O1[Object A<br>Page 7]
+        O1 -->|"jump"| O2[Object B<br>Page 231]
+        O2 -->|"jump"| O3[Object C<br>Page 42]
+        O3 -->|"jump"| O4[Object D<br>Page 890]
+        O4 -->|"jump"| O5[Object E<br>Page 3]
+    end
+
+    subgraph NEW["Green Tea: Page Scanning"]
+        direction TB
+        W2[Work Queue<br>FIFO] --> P1[Page 7<br>5 objects]
+        P1 -->|"sequential"| P1A[Scan all 5<br>contiguously]
+        W2 --> P2[Page 42<br>12 objects]
+        P2 -->|"sequential"| P2A[Scan all 12<br>contiguously]
+    end
+
+    style OLD fill:#fee,stroke:#c33
+    style NEW fill:#efe,stroke:#3c3
+    style O1 fill:#fcc
+    style O2 fill:#fcc
+    style O3 fill:#fcc
+    style O4 fill:#fcc
+    style O5 fill:#fcc
+    style P1 fill:#cfc
+    style P1A fill:#cfc
+    style P2 fill:#cfc
+    style P2A fill:#cfc

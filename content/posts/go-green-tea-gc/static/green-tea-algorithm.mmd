@@ -1,0 +1,25 @@
+sequenceDiagram
+    participant Scanner as GC Worker
+    participant Queue as Page Queue (FIFO)
+    participant Page as Span (8 KiB)
+    participant Meta as Bitmap (gray/black)
+
+    Note over Queue: Pages accumulate<br>marked objects while waiting
+
+    Scanner->>Queue: Dequeue page
+    Queue->>Page: Page 42 (has 8 gray objects)
+
+    Scanner->>Meta: Read gray XOR black bits
+    Meta-->>Scanner: 8 objects need scanning
+
+    Scanner->>Meta: Copy gray to black
+    Note over Meta: All 8 now black (scanned)
+
+    loop For each object on page
+        Scanner->>Page: Scan object pointers
+        Page-->>Scanner: Found pointer to Object on Page 77
+        Scanner->>Meta: Set gray bit on Page 77
+        Scanner->>Queue: Enqueue Page 77 (if not queued)
+    end
+
+    Note over Queue: Page 77 waits in queue,<br>accumulates more gray objects
