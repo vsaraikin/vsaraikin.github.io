@@ -3,6 +3,7 @@ title: "Python 3.14: The Release That Actually Changes Things"
 date: 2025-10-07
 draft: false
 description: "T-strings, no GIL, subinterpreters, deferred annotations, a JIT compiler — Python 3.14 ships more fundamental changes than any release in years."
+tags: ["python"]
 ---
 
 Python releases usually bring a few nice-to-haves. 3.14 is different. It ships changes people have been arguing about for a decade: the GIL is officially optional, annotations are finally lazy, and there's a new string type.

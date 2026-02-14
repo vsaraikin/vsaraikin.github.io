@@ -3,6 +3,7 @@ title: "Go JSON Performance Showdown: Benchmarking the Fastest Libraries"
 date: 2025-10-08
 draft: false
 description: "A comprehensive benchmark comparison of 8 high-performance JSON libraries for Go: from standard library to SIMD-accelerated parsers."
+tags: ["go", "performance", "benchmarks"]
 ---
 
 JSON serialization is everywhere in Go: REST APIs, config files, data pipelines, message queues. For most applications, `encoding/json` from the standard library works fine. But when you're processing millions of requests per second or dealing with large payloads, JSON becomes a bottleneck.

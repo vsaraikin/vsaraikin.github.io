@@ -3,6 +3,7 @@ title: "Go 1.26: Everything That Ships in February 2026"
 date: 2026-02-01
 draft: false
 description: "Green Tea GC is now default, cgo is 30% faster, new(expr) works, SIMD lands as an experiment, and 20+ go fix modernizers can rewrite your code. The full breakdown."
+tags: ["go"]
 ---
 
 Go 1.26 ships more runtime and tooling changes than any release since 1.22. The Green Tea garbage collector is now the default, cgo overhead dropped 30%, small object allocation got specialized routines, and `go fix` was rebuilt from scratch with 20+ code modernizers.

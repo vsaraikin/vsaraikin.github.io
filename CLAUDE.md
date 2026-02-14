@@ -1,4 +1,8 @@
-Examples of good tehnical blogs and the style in which they are written:
+# Blog Instructions
+
+When writing blog posts, follow the style guide in `.claude/blog-writing-guide.md`.
+
+Examples of good technical blogs for reference:
 
 - https://danluu.com
 - https://martinfowler.com

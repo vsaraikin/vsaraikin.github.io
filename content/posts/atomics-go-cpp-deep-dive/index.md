@@ -3,6 +3,7 @@ title: "Atomics in Go and C++: How They Actually Work"
 date: 2026-01-21
 draft: false
 description: "A deep dive into atomic operations: how they work at the hardware level, why they're faster than mutexes, memory ordering, and when to use them."
+tags: ["go", "c++", "concurrency", "performance"]
 ---
 
 You have a counter. Multiple goroutines increment it. You reach for a mutex.

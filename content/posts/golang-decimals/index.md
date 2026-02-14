@@ -3,6 +3,7 @@ title: "How Do Go Decimal Packages Work Under the Hood?"
 date: 2025-11-19
 draft: false
 description: "Inside shopspring/decimal: what type Decimal hides, why .Add allocates 6 times, and how three libraries trade precision for speed."
+tags: ["go", "performance"]
 ---
 
 ## The 0.1 + 0.2 Problem

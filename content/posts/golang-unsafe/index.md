@@ -3,6 +3,7 @@ title: "Go's unsafe Package: Power, Peril, and Practical Patterns"
 date: 2025-10-29
 draft: false
 description: "A deep dive into Go's unsafe package: what it is, how it works, when to use it, and why you probably shouldn't."
+tags: ["go", "systems"]
 ---
 
 Go is a safe language. The compiler catches type mismatches. The runtime prevents buffer overflows. The garbage collector manages memory.

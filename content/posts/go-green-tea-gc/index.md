@@ -3,6 +3,7 @@ title: "Green Tea GC: How Go 1.26 Cuts Garbage Collection Overhead by Up to 40%"
 date: 2026-02-01
 draft: false
 description: "Go's new default garbage collector works with memory pages instead of individual objects. Here's how the algorithm works, why cache locality matters for GC, and when it won't help."
+tags: ["go", "performance", "garbage-collection"]
 ---
 
 Go's garbage collector has a dirty secret: over 85% of its CPU time is spent in a single loop — the mark phase scan loop. And more than a third of _that_ time is wasted stalling on memory.
