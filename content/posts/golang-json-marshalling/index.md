@@ -7,7 +7,7 @@ description: "A comprehensive benchmark comparison of 8 high-performance JSON li
 
 JSON serialization is everywhere in Go: REST APIs, config files, data pipelines, message queues. For most applications, `encoding/json` from the standard library works fine. But when you're processing millions of requests per second or dealing with large payloads, JSON becomes a bottleneck.
 
-This post benchmarks **8 of the fastest JSON libraries** for Go, explains *why* they're fast, and helps you choose the right one for your use case.
+This post benchmarks **8 of the fastest JSON libraries** for Go, explains _why_ they're fast, and helps you choose the right one for your use case.
 
 ## The Contenders
 
@@ -49,7 +49,7 @@ func (u *User) MarshalJSON() ([]byte, error) {
 ByteDance's `sonic` uses **just-in-time compilation** to generate native machine code specialized for your Go types. It also leverages **SIMD** (Single Instruction, Multiple Data) instructions to process multiple bytes in parallel.
 
 By default: Process 1 byte at a time
-SIMD:       Process 16-32 bytes simultaneously
+SIMD: Process 16-32 bytes simultaneously
 
 When scanning for escape characters (`"`, `\`, etc.) or validating UTF-8, SIMD does 16 comparisons in one CPU instruction.
 
@@ -192,6 +192,6 @@ go install github.com/mailru/easyjson/...@latest
 easyjson -all main.go
 ```
 
->Performance varies by workload. Always benchmark with your actual data structures.
+> Performance varies by workload. Always benchmark with your actual data structures.
 
 Me personally, I use `easyjson` because I like the balance of speed and type safety.

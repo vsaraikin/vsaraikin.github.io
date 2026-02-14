@@ -5,7 +5,7 @@ draft: false
 description: "Go's new default garbage collector works with memory pages instead of individual objects. Here's how the algorithm works, why cache locality matters for GC, and when it won't help."
 ---
 
-Go's garbage collector has a dirty secret: over 85% of its CPU time is spent in a single loop — the mark phase scan loop. And more than a third of *that* time is wasted stalling on memory.
+Go's garbage collector has a dirty secret: over 85% of its CPU time is spent in a single loop — the mark phase scan loop. And more than a third of _that_ time is wasted stalling on memory.
 
 Not because the algorithm is wrong. Because the CPU cache can't keep up.
 
@@ -47,11 +47,11 @@ The full cycle — from dequeuing a page to enqueuing newly discovered pages —
 
 Each object gets two metadata bits:
 
-| Gray | Black | Meaning |
-|------|-------|---------|
-| 0 | 0 | White — unreached, possibly garbage |
-| 1 | 0 | Gray — found, waiting to be scanned |
-| 1 | 1 | Black — scanned, definitely alive |
+| Gray | Black | Meaning                             |
+| ---- | ----- | ----------------------------------- |
+| 0    | 0     | White — unreached, possibly garbage |
+| 1    | 0     | Gray — found, waiting to be scanned |
+| 1    | 1     | Black — scanned, definitely alive   |
 
 When a worker dequeues a span:
 
@@ -90,6 +90,7 @@ The significance isn't just the speedup. The old per-object scanning loop had ir
 From the Go team's benchmarks and community reports:
 
 **Where Green Tea helps:**
+
 - GC-heavy microbenchmarks: 10-50% reduction in GC CPU time
 - tile38 (geospatial database): 35% reduction in GC overhead
 - L1/L2 cache misses during GC: cut in half
@@ -97,6 +98,7 @@ From the Go team's benchmarks and community reports:
 - With AVX-512: additional ~10% on top
 
 **Where it doesn't help:**
+
 - [DoltHub](https://www.dolthub.com/blog/2025-09-26-greentea-gc-with-dolt/) (SQL database engine): no measurable improvement, slight regression in mark time
 - bleve-index (search indexer): "performance is a wash" — low-fanout binary tree with frequent rotations scatters objects across spans, Green Tea scans single objects per span most of the time
 - Programs with minimal GC pressure: no change (you can't optimize what isn't running)
@@ -145,7 +147,7 @@ Look at the `@` field in gctrace output — that's the percentage of CPU used by
 
 ## What It Means for Go's Runtime
 
-Green Tea is the first major GC algorithm change since [Go 1.5 introduced the concurrent collector](https://go.dev/blog/go15gc) in 2015. The design philosophy is worth noting: instead of a fundamentally different collection strategy (generational, regional, compacting), the Go team kept the same mark-sweep foundation and changed *how* it traverses memory.
+Green Tea is the first major GC algorithm change since [Go 1.5 introduced the concurrent collector](https://go.dev/blog/go15gc) in 2015. The design philosophy is worth noting: instead of a fundamentally different collection strategy (generational, regional, compacting), the Go team kept the same mark-sweep foundation and changed _how_ it traverses memory.
 
 That's a very Go approach. The same algorithm, but aware of the hardware it runs on.
 

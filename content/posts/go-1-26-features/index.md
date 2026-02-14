@@ -16,6 +16,7 @@ The experimental garbage collector from Go 1.25 is now enabled for everyone. If 
 The core change: instead of scanning individual objects scattered across the heap, Green Tea scans entire 8 KiB memory pages. This means contiguous memory access instead of pointer-chasing, which makes CPU prefetching actually work.
 
 **Real-world impact:**
+
 - 10-40% reduction in GC CPU overhead, depending on workload
 - Additional ~10% improvement on CPUs with AVX-512 (Intel Ice Lake+, AMD Zen 4+), thanks to vectorized scanning
 - Programs that spend 10% of time in GC can expect 1-4% total CPU savings
@@ -160,7 +161,7 @@ logger.Info("login", slog.String("user", "alice"), slog.Int("id", 42))
 // Writes to both stdout (text) and file (JSON)
 ```
 
-`Enabled()` returns true if *any* handler is enabled at that level.
+`Enabled()` returns true if _any_ handler is enabled at that level.
 
 ## Reflect Iterators
 
@@ -295,6 +296,7 @@ For deterministic testing, use the new `testing/cryptotest.SetGlobalRandom(t, se
 **pprof flame graphs** — the web UI (`-http` flag) now defaults to flame graph view instead of the old graph.
 
 **Platform notes:**
+
 - Last release supporting macOS 12 Monterey (1.27 requires Ventura)
 - 32-bit `windows/arm` removed
 - `linux/riscv64` now supports the race detector

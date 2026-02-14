@@ -1,0 +1,27 @@
+sequenceDiagram
+    participant C0 as Core 0
+    participant CL as Cache Line
+    participant C1 as Core 1
+
+    Note over C0,C1: LDXR / STXR (Load-Link / Store-Conditional)
+
+    C0->>CL: LDXR - Load Exclusive (read 42)
+    Note over C0: Exclusive monitor set
+
+    C0->>C0: ADD 1 (= 43)
+
+    C1->>CL: LDXR - Load Exclusive (read 42)
+    Note over C0: Monitor LOST (Core 1 touched it)
+
+    C1->>C1: ADD 1 (= 43)
+    C1->>CL: STXR - Store 43
+    Note over CL: Success (Core 1 monitor valid)
+
+    C0->>CL: STXR - Store 43
+    Note over CL: FAIL (Core 0 monitor lost)
+
+    Note over C0: Retry from LDXR
+    C0->>CL: LDXR - Load Exclusive (read 43)
+    C0->>C0: ADD 1 (= 44)
+    C0->>CL: STXR - Store 44
+    Note over CL: Success

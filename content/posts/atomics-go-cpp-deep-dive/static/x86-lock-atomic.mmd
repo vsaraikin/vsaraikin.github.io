@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant C0 as Core 0
+    participant CL as Cache Line
+    participant C1 as Core 1
+
+    Note over C0,C1: LOCK XADD [counter], 1
+
+    C0->>CL: Request exclusive ownership
+    CL->>C1: Invalidate your copy
+    C1-->>CL: Acknowledged
+    Note over CL: State: Modified (Core 0 owns it)
+    Note over C0: Read value (42)
+    Note over C0: Add 1 (43)
+    Note over C0: Write back (43)
+    Note over CL: Released - other cores can access
+
+    C1->>CL: Request to read
+    CL-->>C1: Value: 43
+    Note over CL: State: Shared
