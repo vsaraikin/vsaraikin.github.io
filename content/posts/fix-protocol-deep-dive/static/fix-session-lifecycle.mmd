@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant I as Initiator
+    participant A as Acceptor
+
+    I->>A: Logon (MsgType=A)
+    A->>I: Logon (MsgType=A)
+
+    Note over I,A: Session Established
+
+    I->>A: NewOrderSingle (D)
+    A->>I: ExecutionReport (8)
+
+    I-->>A: Heartbeat (0)
+    A-->>I: Heartbeat (0)
+
+    I->>A: Logout (5)
+    A->>I: Logout (5)
+
+    Note over I,A: Session Closed

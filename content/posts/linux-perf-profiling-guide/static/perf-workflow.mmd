@@ -1,0 +1,12 @@
+flowchart TB
+    A[Your Program] -->|"perf record -g"| B[perf.data]
+    B -->|"perf report"| C[Interactive Report]
+    B -->|"perf script"| D[Raw Trace]
+    D -->|stackcollapse-perf.pl| E[Folded Stacks]
+    E -->|flamegraph.pl| F[Flame Graph SVG]
+
+    G[Your Program] -->|"perf stat"| H[CPU Counters]
+    H --> I[cache-misses]
+    H --> J[branch-misses]
+    H --> K[instructions]
+    H --> L[cycles]

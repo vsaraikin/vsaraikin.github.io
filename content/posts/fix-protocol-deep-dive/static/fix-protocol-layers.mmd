@@ -1,0 +1,26 @@
+graph TB
+    subgraph APP["Application Layer"]
+        direction LR
+        A1[Orders]
+        A2[Executions]
+        A3[Market Data]
+    end
+
+    subgraph SESSION["Session Layer"]
+        direction LR
+        S1[Logon/Logout]
+        S2[Heartbeat]
+        S3[Sequence Numbers]
+        S4[Recovery]
+    end
+
+    subgraph TRANSPORT["TCP/IP"]
+        T1[Reliable byte stream]
+    end
+
+    APP --> SESSION
+    SESSION --> TRANSPORT
+
+    style APP fill:#e8f4fd,stroke:#2196F3
+    style SESSION fill:#fff3e0,stroke:#FF9800
+    style TRANSPORT fill:#f3e5f5,stroke:#9C27B0

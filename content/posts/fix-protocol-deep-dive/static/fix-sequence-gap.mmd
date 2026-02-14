@@ -1,0 +1,20 @@
+sequenceDiagram
+    participant Client
+    participant Broker
+
+    Client->>Broker: Msg SeqNum=93
+    Client->>Broker: Msg SeqNum=94
+    Note right of Broker: Messages 95-99 lost<br>in network failure
+    Client->>Broker: Msg SeqNum=100
+
+    Note right of Broker: Expected 95, got 100<br>Gap detected!
+
+    Broker->>Client: Resend Request<br>BeginSeqNo=95, EndSeqNo=99
+
+    Client->>Broker: Msg SeqNum=95 (PossDupFlag=Y)
+    Client->>Broker: Msg SeqNum=96 (PossDupFlag=Y)
+    Client->>Broker: Msg SeqNum=97 (PossDupFlag=Y)
+    Client->>Broker: Msg SeqNum=98 (PossDupFlag=Y)
+    Client->>Broker: Msg SeqNum=99 (PossDupFlag=Y)
+
+    Note over Client,Broker: Gap filled, normal messaging resumes

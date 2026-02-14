@@ -1,0 +1,20 @@
+sequenceDiagram
+    participant Initiator
+    participant Acceptor
+
+    Note over Initiator,Acceptor: Connection lost
+
+    Initiator->>Acceptor: Logon (NextNumOut=150)
+
+    Note right of Acceptor: Expected SeqNum=145<br>Gap: 145-149
+
+    Acceptor->>Initiator: Logon (NextNumOut=200)
+    Acceptor->>Initiator: Resend Request<br>BeginSeqNo=145, EndSeqNo=149
+
+    Initiator->>Acceptor: Msg 145 (PossDupFlag=Y)
+    Initiator->>Acceptor: Msg 146 (PossDupFlag=Y)
+    Initiator->>Acceptor: Msg 147 (PossDupFlag=Y)
+    Initiator->>Acceptor: Msg 148 (PossDupFlag=Y)
+    Initiator->>Acceptor: Msg 149 (PossDupFlag=Y)
+
+    Note over Initiator,Acceptor: Recovery complete,<br>normal messaging resumes
